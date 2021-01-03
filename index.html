@@ -195,7 +195,9 @@
         </div>
         <div class="row justify-content-center mt-4">
             <div class="col-lg-8 mx-auto mbr-form" data-form-type="formoid">
-<!--Formbuilder Form-->
+                <!-- Form.IO form embed-->
+                <div id="formio"></div>
+<!--Formbuilder Form
 <form action="https://mobirise.eu/" method="POST" class="mbr-form form-with-styler mx-auto" data-form-title="Form Name"><input type="hidden" name="g-recaptcha-response" data-form-captcha="true" value="6LfGuBQaAAAAAPFhxRwsWlGLbn7Bbt6rXVLWwper"><input type="hidden" name="email" data-form-email="true" value="r91VCFgoOwwMArzaaNa7PE4XU3/679GYkS1hrFZgVLgTmNDxrQF3R2FM7FwwgJYPiEe2tCqh25UJo5Zt8NwNAmzXxMPu9on34EuFtR0sTttC+3WOmFyvNl2GYh7yEdsI.SF6fkj22g1P9yiogybIpLAkEZYM3brPzhrqco2IcoY8T71NOCUzxbeFZJbF7PCNUAjZVXPcffS0CiZN6G2JcdpPa71YnqpQ129kycpI6IgYr0X2jMtxl+7aqUXP4QgD2.Etgi/agzkb/Os0VTbgIC6rXn07QLXFE3YIhEjD2xOHwqAaWkCUPWW4OBpDAYnMiLqSA+8zodCKr1bEe/UQ2Mx9JN1rGAo1YDGqzMJ6ty+lqjioHdDczwWKlqBOHDIr7H">
 <div class="">
 <div hidden="hidden" data-form-alert="" class="alert alert-success col-12">Thanks for messaging me, I will get with you ASAP.</div>
@@ -218,7 +220,8 @@
 <button type="submit" class="btn btn-primary display-4">Submit</button>
 </div>
 </div>
-</form><!--Formbuilder Form-->
+</form>
+Formbuilder Form-->
 </div>
         </div>
     </div>
@@ -306,6 +309,11 @@
   <script src="assets/formoid.min.js"></script>
   <!-- form.io script-->
   <script src="https://unpkg.com/formiojs@latest/dist/formio.full.min.js"></script>
+  <script type="text/javascript">
+    window.onload = function() {
+      Formio.createForm(document.getElementById('formio'), 'https://dcvbtmoymmfjplu.form.io/randevmessageform');
+    };
+  </script>
 
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
