@@ -38,8 +38,9 @@ export function getTheme() {
             document.documentElement.setAttribute('data-theme', theme);
             return theme;
         }
+    } else {
+        return 'business';
     }
-    return '';
 }
 
 export function setThemeColors(theme: string) {
