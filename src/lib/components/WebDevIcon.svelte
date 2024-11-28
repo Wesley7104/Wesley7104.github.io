@@ -52,27 +52,65 @@
       stroke-linecap="round"
       stroke-linejoin="round"
     />
-    <!-- drop shadow -->
+    <!-- .text shadow -->
     <text
       class="svelte-text-shadow"
-      x="52"
-      y="56"
+      x="50"
+      y="40"
       color={neutral}
       text-anchor="middle"
       font-family="monospace"
       font-size="18"
-    >.CODE</text>
-    <!-- .svelte text -->
+    >.code</text>
+    <text
+      class="svelte-text-shadow"
+      x="50"
+      y="55"
+      color={neutral}
+      text-anchor="middle"
+      font-family="monospace"
+      font-size="18"
+    >.is</text>
+    <text
+      class="svelte-text-shadow"
+      x="50"
+      y="68"
+      color={neutral}
+      text-anchor="middle"
+      font-family="monospace"
+      font-size="18"
+    >.cool</text>
+    <!-- .text -->
     <text
       class="svelte-text"
       x="50"
-      y="54"
-      color={secondary}
+      y="40"
+      color={primary}
       text-anchor="middle"
       font-family="monospace"
       font-weight="bold"
       font-size="18"
-    >.CODE</text>
+    >.code</text>
+    <text
+      class="svelte-text"
+      x="50"
+      y="55"
+      color={primary}
+      text-anchor="middle"
+      font-family="monospace"
+      font-weight="bold"
+      font-size="18"
+    >.is</text>
+    <text
+      class="svelte-text"
+      x="50"
+      y="68"
+      color={primary}
+      text-anchor="middle"
+      font-family="monospace"
+      font-weight="bold"
+      font-size="18"
+    >.cool</text>
   </g>
 </svg>
 
@@ -96,10 +134,6 @@
     animation: fade 2s infinite;
   }
 
-  .svelte-text-shadow {
-    fill: currentColor;
-    animation: fade 2s infinite;
-  }
 
   .code-brackets {
     animation: pulse 2s forwards;
