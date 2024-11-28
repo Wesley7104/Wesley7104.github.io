@@ -6,7 +6,8 @@
     import { myThemeColors } from '$lib/themeUtils';
     import WebDevIcon from '$lib/components/WebDevIcon.svelte';
     import DesignIcon from '$lib/components/DesignIcon.svelte';
-
+    import IntegrationIcon from '$lib/components/IntegrationIcon.svelte';
+    import TechConsultingIcon from '$lib/components/TechConsultingIcon.svelte';
     let words = ["Christian", "Father", "Husband", "Developer", "Integrator", "Designer", "Tech Consultant", "Day Trader"]; // Array of all words
     let currentWordIndex = 0;
     let currentCharIndex = 0;
@@ -119,15 +120,12 @@
         <div transition:fade  class="blob" style:transform="translate({m.x}px, {m.y}px)"></div>
       {/if}
        {#each services as service}
-        <div class="card m-3 p-3 bg-primary bg-opacity-35 rounded-box grid flex-grow place-items-center">
+        <div class="card m-3 p-0 bg-primary bg-opacity-35 rounded-box grid flex-grow place-items-center">
             <div class="card-header">
                   {#if service.icon === 'WebDevIcon'}
                     <WebDevIcon size="144px" />
-                  {:else if service.icon === 'DesignIcon'}
-                    <DesignIcon size="144px" />
-                  {:else}
-                    <img src={service.icon} alt={service.title + " icon"} class="w-36 h-36 svg-icon"
-                     />
+                  {:else if service.icon === 'IntegrationIcon'}
+                    <IntegrationIcon size="196px" />
                   {/if}
             </div>
             <div class="card-body">
@@ -137,6 +135,13 @@
                     {service.description}
                 </p>
             </div>
+            <div class="card-footer">
+              {#if service.icon === 'DesignIcon'}
+                <DesignIcon size="144px" />
+              {:else if service.icon === 'TechConsultingIcon'}
+                <TechConsultingIcon size="196px" />
+              {/if}
+        </div>
         </div>
         {/each}
     </div>
