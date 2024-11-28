@@ -112,7 +112,7 @@
         </div>
     </div>
 
-    <!-- Skills Section -->
+    <!-- Services Section -->
     <div class="divider divider-accent opacity-50 w-3/4 mx-auto"></div>
     
     <div class="flex w-full p-4 flex-col lg:flex-row from-neutral via-neutral to-accent bg-gradient-to-br on:enter={mousemove} on:leave={mouseleave}">
