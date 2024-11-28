@@ -4,6 +4,8 @@
     import { fade } from 'svelte/transition';
     import services from '$lib/services.json';
     import { myThemeColors } from '$lib/themeUtils';
+    import WebDevIcon from '$lib/components/WebDevIcon.svelte';
+    import DesignIcon from '$lib/components/DesignIcon.svelte';
 
     let words = ["Christian", "Father", "Husband", "Developer", "Integrator", "Designer", "Tech Consultant", "Day Trader"]; // Array of all words
     let currentWordIndex = 0;
@@ -110,17 +112,23 @@
     </div>
 
     <!-- Skills Section -->
-    <div class="divider divider-accent w-3/4 mx-auto"></div>
+    <div class="divider divider-accent opacity-50 w-3/4 mx-auto"></div>
     
     <div class="flex w-full p-4 flex-col lg:flex-row from-neutral via-neutral to-accent bg-gradient-to-br on:enter={mousemove} on:leave={mouseleave}">
       {#if m.x > 0 || m.y > 0}
         <div transition:fade  class="blob" style:transform="translate({m.x}px, {m.y}px)"></div>
       {/if}
        {#each services as service}
-        <div class="card m-3 p-3 glass bg-primary bg-opacity-5 rounded-box grid flex-grow place-items-center">
+        <div class="card m-3 p-3 bg-primary bg-opacity-35 rounded-box grid flex-grow place-items-center">
             <div class="card-header">
-                  <img src={service.icon} alt={service.title + " icon"} class="w-36 h-36 svg-icon"
-                   />
+                  {#if service.icon === 'WebDevIcon'}
+                    <WebDevIcon size="144px" />
+                  {:else if service.icon === 'DesignIcon'}
+                    <DesignIcon size="144px" />
+                  {:else}
+                    <img src={service.icon} alt={service.title + " icon"} class="w-36 h-36 svg-icon"
+                     />
+                  {/if}
             </div>
             <div class="card-body">
                 <h3 class="card-title text-3xl font-bold text-neutral-content">{service.title}</h3>
