@@ -24,7 +24,7 @@
     />
     <!-- Left Bracket -->
     <path 
-      class="bracket left"
+      class="bracketLeft"
       d="M25,20 L10,50 L25,80"
       fill="none"
       stroke={accent}
@@ -44,7 +44,7 @@
     />
     <!-- Right Bracket -->
     <path 
-      class="bracket right"
+      class="bracketRight"
       d="M75,20 L90,50 L75,80"
       fill="none"
       stroke={accent}
@@ -60,8 +60,8 @@
       color={neutral}
       text-anchor="middle"
       font-family="monospace"
-      font-size="14"
-    >.svelte</text>
+      font-size="18"
+    >.CODE</text>
     <!-- .svelte text -->
     <text
       class="svelte-text"
@@ -71,17 +71,24 @@
       text-anchor="middle"
       font-family="monospace"
       font-weight="bold"
-      font-size="14"
-    >.svelte</text>
+      font-size="18"
+    >.CODE</text>
   </g>
 </svg>
 
 <style>
-  .bracket {
+  .bracketLeft {
     stroke: "";
     stroke-dasharray: 150;
     stroke-dashoffset: 150;
-    animation: draw 2s infinite;
+    animation: drawLeft 2s infinite;
+  }
+
+  .bracketRight {
+    stroke: "";
+    stroke-dasharray: 150;
+    stroke-dashoffset: 0;
+    animation: drawRight 2s infinite;
   }
 
   .svelte-text {
@@ -95,14 +102,11 @@
   }
 
   .code-brackets {
-    animation: pulse 2s infinite;
+    animation: pulse 2s forwards;
   }
   
-  .right {
-    animation-delay: 0.5s;
-  }
 
-  @keyframes draw {
+  @keyframes drawLeft {
     0% {
       stroke-dashoffset: 150;
     }
@@ -111,6 +115,18 @@
     }
     100% {
       stroke-dashoffset: 150;
+    }
+  }
+
+  @keyframes drawRight {
+    0% {
+      stroke-dashoffset: 0;
+    }
+    50% {
+      stroke-dashoffset: 150;
+    }
+    100% {
+      stroke-dashoffset: 0;
     }
   }
 
