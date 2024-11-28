@@ -11,12 +11,14 @@
     },
     {
         "title": "Integrations",
-        "description": "Need to discuss how to implement a technical solution? Wish something could connect to another software? There is most likely an integration for what you want. Let me research it and help you set it up.",
-        "icon": ""
+        "icon": "IntegrationIcon",
+        "description": "Need to discuss how to implement a technical solution? Wish something could connect to another software? There is most likely an integration for what you want. Let me research it and help you set it up."
+        
     },
     {
        "title": "Tech Consulting",
-        "description": "I can help you determine the best course of action for your project. I can also help you determine the best technology stack for your project.",
-        "icon": "/chat-bubbles-animation.svg"
+       "icon": "TechConsultingIcon",
+        "description": "I can help you determine the best course of action for your project. I can also help you determine the best technology stack for your project."
+        
     }
 ]
