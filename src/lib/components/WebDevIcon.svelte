@@ -1,16 +1,44 @@
 <script lang="ts">
   export let size = "100%";
+  import { myThemeColors } from "$lib/themeUtils";
+
+  $: primary = $myThemeColors.primary;
+  $: secondary = $myThemeColors.secondary;
+  $: accent = $myThemeColors.accent;
+  $: neutral = $myThemeColors.neutral;
+
 </script>
 
 <svg width={size} height={size} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <g class="code-brackets">
+
+    <!-- Left bracket outline -->
+    <path 
+      class="bracket-outline"
+      d="M25,20 L10,50 L25,80"
+      fill="none"
+      stroke={neutral}
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
     <!-- Left Bracket -->
     <path 
       class="bracket left"
       d="M25,20 L10,50 L25,80"
       fill="none"
-      stroke="currentColor"
+      stroke={accent}
       stroke-width="5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <!-- Right bracket outline -->
+    <path 
+      class="bracket-outline"
+      d="M75,20 L90,50 L75,80"
+      fill="none"
+      stroke={neutral}
+      stroke-width="2"
       stroke-linecap="round"
       stroke-linejoin="round"
     />
@@ -19,16 +47,27 @@
       class="bracket right"
       d="M75,20 L90,50 L75,80"
       fill="none"
-      stroke="currentColor"
+      stroke={accent}
       stroke-width="5"
       stroke-linecap="round"
       stroke-linejoin="round"
     />
+    <!-- drop shadow -->
+    <text
+      class="svelte-text-shadow"
+      x="52"
+      y="56"
+      color={neutral}
+      text-anchor="middle"
+      font-family="monospace"
+      font-size="14"
+    >.svelte</text>
     <!-- .svelte text -->
     <text
       class="svelte-text"
       x="50"
       y="54"
+      color={secondary}
       text-anchor="middle"
       font-family="monospace"
       font-weight="bold"
@@ -39,13 +78,18 @@
 
 <style>
   .bracket {
-    stroke: currentColor;
+    stroke: "";
     stroke-dasharray: 150;
     stroke-dashoffset: 150;
     animation: draw 2s infinite;
   }
 
   .svelte-text {
+    fill: currentColor;
+    animation: fade 2s infinite;
+  }
+
+  .svelte-text-shadow {
     fill: currentColor;
     animation: fade 2s infinite;
   }
