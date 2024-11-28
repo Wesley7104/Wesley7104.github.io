@@ -1,114 +1,127 @@
 <script lang="ts">
-  export let size = "100%";
-  import { myThemeColors } from "$lib/themeUtils";
-
-  $: primary = $myThemeColors.primary;
-  $: secondary = $myThemeColors.secondary;
-  $: accent = $myThemeColors.accent;
-  $: neutral = $myThemeColors.neutral;
-
+    export let size = "100%";
+    import { myThemeColors } from "$lib/themeUtils";
+  
+    $: primary = $myThemeColors.primary;
+    $: secondary = $myThemeColors.secondary;
+    $: accent = $myThemeColors.accent;
+    $: neutral = $myThemeColors.neutral;
 </script>
-
-<svg width={size} height={size} viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <!-- Tablet Frame -->
-  <rect 
-    class="tablet"
-    x="5" 
-    y="10" 
-    width="90" 
-    height="70" 
-    rx="4"
-    fill="none"
-    stroke={primary}
-    stroke-width="6"
-  />
   
-  <!-- Drawing Area -->
-  <clipPath id="screen-mask">
-    <rect x="10" y="15" width="80" height="60" rx="2" />
-  </clipPath>
-  
-  <g clip-path="url(#screen-mask)">
-    <!-- Mountains being drawn -->
-    <path 
-      class="mountain"
-      d="M10,75 L30,35 L45,55 L60,25 L75,45 L90,75"
-      fill="none"
-      stroke={secondary}
-      stroke-width="4"
-      stroke-linecap="round"
+<svg width={size} height={size} viewBox="0 0 100 100">
+    <rect 
+        class="tablet"
+        x="5" y="10" width="90" height="70" rx="4"
+        fill="none" stroke={primary} stroke-width="6"
     />
     
-    <!-- Clouds -->
-    <path 
-      class="cloud"
-      d="M20,30 C20,30 25,25 30,30 S40,30 40,30"
-      fill="none"
-      stroke={accent}
-      stroke-width="2"
-      stroke-linecap="round"
-    />
+    <clipPath id="screen-mask">
+        <rect x="10" y="15" width="80" height="60" rx="2" />
+    </clipPath>
     
-    <path 
-      class="cloud"
-      d="M60,25 C60,25 65,20 70,25 S80,25 80,25"
-      fill="none"
-      stroke={accent}
-      stroke-width="2"
-      stroke-linecap="round"
-    />
-  </g>
+    <g clip-path="url(#screen-mask)">
+        <path 
+            class="mountain"
+            d="M10,75 L30,35 L45,55 L60,25 L75,45 L90,75"
+            fill="none" stroke={secondary} stroke-width="4"
+            stroke-linecap="round"
+        />
+        
+        <path 
+            class="cloud"
+            d="M20,30 C20,30 25,25 30,30 S40,30 40,30"
+            fill="none" stroke={accent} stroke-width="2"
+            stroke-linecap="round"
+        />
+        
+        <path 
+            class="cloud"
+            d="M60,25 C60,25 65,20 70,25 S80,25 80,25"
+            fill="none" stroke={accent} stroke-width="2"
+            stroke-linecap="round"
+        />
+    </g>
 
-  <!-- Home Button -->
-  <circle 
-    class="button"
-    cx="50" 
-    cy="80" 
-    r="3"
-    fill={neutral}
-  />
+    <circle 
+        class="button"
+        cx="50" cy="80" r="3"
+        fill={accent}
+    />
 </svg>
-
+  
 <style>
-  .tablet {
-    stroke-dasharray: 400;
-    stroke-dashoffset: 400;
-    animation: draw 2s 2.5s infinite;
-  }
-
-  .mountain {
-    stroke-dasharray: 300;
-    stroke-dashoffset: 300;
-    animation: draw 2s 4.5s infinite;
-  }
-
-  .cloud {
-    stroke-dasharray: 50;
-    stroke-dashoffset: 50;
-    animation: draw 2s 0.5s infinite;
-  }
-
-  .button {
-    animation: pulse 1s ease-in infinite;
-    transform-origin: center;
-    transform-box: fill-box;
-  }
-
-  @keyframes draw {
-    to {
-      stroke-dashoffset: 0;
+    .tablet {
+        stroke-dasharray: 400;
+        animation: draw 2s linear forwards;
     }
-  }
 
-  @keyframes pulse {
-    0% {
-      transform: scale(1);
+    .mountain {
+        stroke-dasharray: 300;
+        animation: draw 2s linear forwards;
     }
-    50% {
-      transform: scale(0.8);
+
+    .cloud {
+        stroke-dasharray: 50;
+        animation: draw 8s linear infinite;
     }
-    100% {
-      transform: scale(1);
+
+    .button {
+        transform-origin: center;
+        transform-box: fill-box;
+        animation: pulse 2s linear 6s infinite;
     }
-  }
+
+     /* Add hover restart behavior */
+    svg:hover .tablet {
+        animation: draw 2s linear forwards;
+    }
+    svg:hover .mountain {
+        animation: draw 2s linear forwards;
+    }
+
+    svg:hover .cloud {
+        animation: draw 8s linear forwards;
+    }
+
+    svg:hover .button {
+        animation: pulse 2s linear infinite;
+    }
+
+    @keyframes draw {
+        from {
+            stroke-dashoffset: 400;
+        }
+        to {
+            stroke-dashoffset: 0;
+        }
+    }
+
+    @keyframes pulse {
+        50% {
+            transform: scale(0.5);
+        }
+    }
+
+    @keyframes redraw {
+        from {
+            stroke-dashoffset: 400;
+        }
+        to {
+            stroke-dashoffset: 0;
+        }
+    }
+
+    svg:hover .tablet {
+        animation-name: redraw;
+        animation-duration: 2s;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+    }
+
+    svg:hover .mountain {
+        animation-name: redraw;
+        animation-duration: 2s;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+    }
 </style> 
