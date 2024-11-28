@@ -1,0 +1,22 @@
+[
+    {
+        "title": "Web Development",
+        "description": "Having some familiarity with many different technologies I can help you determine project specifications by not being limited to any specific technology stack.",
+        "icon": ""
+    },
+    {
+        "title": "Graphic Design",
+        "description": "My extensive experience in graphic design allows me to offer these services, in conjunction with others, saving you time and money on your project.",
+        "icon": ""
+    },
+    {
+        "title": "Integrations",
+        "description": "Need to discuss how to implement a technical solution? Wish something could connect to another software? There is most likely an integration for what you want. Let me research it and help you set it up.",
+        "icon": ""
+    },
+    {
+       "title": "Tech Consulting",
+        "description": "I can help you determine the best course of action for your project. I can also help you determine the best technology stack for your project.",
+        "icon": "/chat-bubbles-animation.svg"
+    }
+]
