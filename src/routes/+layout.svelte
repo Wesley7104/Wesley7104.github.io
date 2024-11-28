@@ -7,7 +7,11 @@
 
     onMount(() => {
         const currentTheme = getTheme();
-        setThemeColors(currentTheme);
+        if (currentTheme) {
+            setThemeColors(currentTheme);
+        } else {
+            setThemeColors('business');
+        } 
     });
 
 	let { children } = $props();
