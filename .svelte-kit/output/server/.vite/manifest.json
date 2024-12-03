@@ -77,9 +77,9 @@
       "_index2.js"
     ]
   },
-  "src/lib/MyCartoonPhoto.png": {
+  "src/images/MyCartoonPhoto.png": {
     "file": "_app/immutable/assets/MyCartoonPhoto.DV6-aHnP.png",
-    "src": "src/lib/MyCartoonPhoto.png"
+    "src": "src/images/MyCartoonPhoto.png"
   },
   "src/routes/+layout.js": {
     "file": "entries/pages/_layout.js",

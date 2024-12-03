@@ -1,5 +1,5 @@
 <script lang="ts">
-    import myPhoto from '$lib/MyCartoonPhoto.png'
+    import myPhoto from '../images/MyCartoonPhoto.png'
     import { onMount } from 'svelte';
     import { fade } from 'svelte/transition';
     import services from '$lib/services.json';
