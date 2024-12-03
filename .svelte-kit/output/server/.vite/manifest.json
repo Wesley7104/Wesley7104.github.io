@@ -85,7 +85,7 @@
       "_themeUtils.js"
     ],
     "css": [
-      "_app/immutable/assets/_layout.D5OBITFQ.css"
+      "_app/immutable/assets/_layout.BWZ_adqU.css"
     ]
   },
   "src/routes/+page.svelte": {
@@ -116,6 +116,15 @@
     ],
     "css": [
       "_app/immutable/assets/_page.L6wN1058.css"
+    ]
+  },
+  "src/routes/[...404]/+page.svelte": {
+    "file": "entries/pages/_...404_/_page.svelte.js",
+    "name": "entries/pages/_...404_/_page.svelte",
+    "src": "src/routes/[...404]/+page.svelte",
+    "isEntry": true,
+    "css": [
+      "_app/immutable/assets/_page.B5ArI6hO.css"
     ]
   }
 }
