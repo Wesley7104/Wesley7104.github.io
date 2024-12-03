@@ -43,7 +43,8 @@
 				current_theme = theme;
 			} else {
 				current_theme = 'business';
-				set_theme(current_theme);
+				document.documentElement.setAttribute('data-theme', current_theme);
+				setThemeColors(current_theme);
 			}
 		}
 	});
