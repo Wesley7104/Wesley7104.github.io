@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="150" height="150">
+  <style>
+    :root {
+        --primary-color: '#111111';
+        --secondary-color: '#ffffff';
+    }
+    .primary { fill: var(--primary-color); }
+    .secondary { fill: var(--secondary-color); }
+    .bubble1, .bubble2 {
+      opacity: 0;
+      animation: appear 2s ease-in-out infinite alternate;
+    }
+    .bubble2 {
+      animation-delay: 1s;
+    }
+    @keyframes appear {
+      0%, 20% { opacity: 0; transform: scale(0.8) translateY(10px); }
+      80%, 100% { opacity: 1; transform: scale(1) translateY(0); }
+    }
+  </style>
+  
+  <!-- Left chat bubble -->
+  <g class="bubble1">
+    <path class="primary" d="M10,50 Q10,35 25,35 H40 Q55,35 55,50 T40,65 H25 Q10,65 10,50 Z" />
+    <circle class="primary" cx="20" cy="70" r="5" />
+  </g>
+  
+  <!-- Right chat bubble -->
+  <g class="bubble2">
+    <path class="secondary" d="M90,50 Q90,35 75,35 H60 Q45,35 45,50 T60,65 H75 Q90,65 90,50 Z" />
+    <circle class="secondary" cx="80" cy="70" r="5" />
+  </g>
+</svg>

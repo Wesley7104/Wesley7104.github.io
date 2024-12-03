@@ -1,0 +1,121 @@
+{
+  ".svelte-kit/generated/server/internal.js": {
+    "file": "internal.js",
+    "name": "internal",
+    "src": ".svelte-kit/generated/server/internal.js",
+    "isEntry": true,
+    "imports": [
+      "_internal.js"
+    ]
+  },
+  "_equality.js": {
+    "file": "chunks/equality.js",
+    "name": "equality"
+  },
+  "_exports.js": {
+    "file": "chunks/exports.js",
+    "name": "exports"
+  },
+  "_index.js": {
+    "file": "chunks/index.js",
+    "name": "index",
+    "imports": [
+      "_index2.js",
+      "_equality.js"
+    ]
+  },
+  "_index2.js": {
+    "file": "chunks/index2.js",
+    "name": "index"
+  },
+  "_internal.js": {
+    "file": "chunks/internal.js",
+    "name": "internal",
+    "imports": [
+      "_index2.js",
+      "_equality.js"
+    ]
+  },
+  "_themeUtils.js": {
+    "file": "chunks/themeUtils.js",
+    "name": "themeUtils",
+    "imports": [
+      "_index2.js",
+      "_index.js"
+    ]
+  },
+  "_themes.js": {
+    "file": "chunks/themes.js",
+    "name": "themes"
+  },
+  "node_modules/@sveltejs/kit/src/runtime/components/svelte-5/error.svelte": {
+    "file": "entries/fallbacks/error.svelte.js",
+    "name": "entries/fallbacks/error.svelte",
+    "src": "node_modules/@sveltejs/kit/src/runtime/components/svelte-5/error.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index2.js",
+      "_exports.js"
+    ]
+  },
+  "node_modules/@sveltejs/kit/src/runtime/server/index.js": {
+    "file": "index.js",
+    "name": "index",
+    "src": "node_modules/@sveltejs/kit/src/runtime/server/index.js",
+    "isEntry": true,
+    "imports": [
+      "_internal.js",
+      "_exports.js",
+      "_index.js",
+      "_index2.js"
+    ]
+  },
+  "src/lib/MyCartoonPhoto.png": {
+    "file": "_app/immutable/assets/MyCartoonPhoto.DV6-aHnP.png",
+    "src": "src/lib/MyCartoonPhoto.png"
+  },
+  "src/routes/+layout.svelte": {
+    "file": "entries/pages/_layout.svelte.js",
+    "name": "entries/pages/_layout.svelte",
+    "src": "src/routes/+layout.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index2.js",
+      "_themes.js",
+      "_themeUtils.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_layout.D5OBITFQ.css"
+    ]
+  },
+  "src/routes/+page.svelte": {
+    "file": "entries/pages/_page.svelte.js",
+    "name": "entries/pages/_page.svelte",
+    "src": "src/routes/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index2.js",
+      "_themeUtils.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.C113wp60.css"
+    ],
+    "assets": [
+      "_app/immutable/assets/MyCartoonPhoto.DV6-aHnP.png"
+    ]
+  },
+  "src/routes/SVGtesting/+page.svelte": {
+    "file": "entries/pages/SVGtesting/_page.svelte.js",
+    "name": "entries/pages/SVGtesting/_page.svelte",
+    "src": "src/routes/SVGtesting/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index2.js",
+      "_index.js",
+      "_themes.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.L6wN1058.css"
+    ]
+  }
+}
