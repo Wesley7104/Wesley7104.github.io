@@ -41,6 +41,8 @@
 			if (theme && themes.includes(theme)) {
 				document.documentElement.setAttribute('data-theme', theme);
 				current_theme = theme;
+			} else {
+				current_theme = 'business';
 			}
 		}
 	});
