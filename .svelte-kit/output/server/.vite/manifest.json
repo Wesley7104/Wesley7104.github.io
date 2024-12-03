@@ -77,10 +77,6 @@
       "_index2.js"
     ]
   },
-  "src/images/MyCartoonPhoto.png": {
-    "file": "_app/immutable/assets/MyCartoonPhoto.DV6-aHnP.png",
-    "src": "src/images/MyCartoonPhoto.png"
-  },
   "src/routes/+layout.js": {
     "file": "entries/pages/_layout.js",
     "name": "entries/pages/_layout",
@@ -109,13 +105,11 @@
     "isEntry": true,
     "imports": [
       "_index2.js",
+      "_paths.js",
       "_themeUtils.js"
     ],
     "css": [
       "_app/immutable/assets/_page.C113wp60.css"
-    ],
-    "assets": [
-      "_app/immutable/assets/MyCartoonPhoto.DV6-aHnP.png"
     ]
   },
   "src/routes/SVGtesting/+page.svelte": {

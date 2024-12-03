@@ -1,7 +1,7 @@
 <script lang="ts">
-    import myPhoto from '../images/MyCartoonPhoto.png'
     import { onMount } from 'svelte';
     import { fade } from 'svelte/transition';
+    import { base } from '$app/paths';
     import services from '$lib/services.json';
     import { myThemeColors } from '$lib/themeUtils';
     import WebDevIcon from '$lib/components/WebDevIcon.svelte';
@@ -65,10 +65,10 @@
             const b = parseInt(hexColor.slice(5, 7), 16);
             // Calculate filter values
             filterValue = `invert(${r/255*100}%) sepia(${g/255*100}%) saturate(${b/255*100}%) hue-rotate(${Math.atan2(b-r, g-r) * 180 / Math.PI}deg)`;
-            console.log("converted filterValue: ", filterValue);
+            //console.log("converted filterValue: ", filterValue);
         } else {
            filterValue = hexColor;
-           console.log("un-converted filterValue: ", filterValue);
+           //console.log("un-converted filterValue: ", filterValue);
         }
         return filterValue;
     }
@@ -91,7 +91,7 @@
         <div class="hero-content flex-col lg:flex-row">
         <img
             alt="Wesley's Professional Headshot"
-            src= {myPhoto}
+            src="{base}/images/MyCartoonPhoto.png"
             class="max-w-sm rounded-full shadow-lg" />
         <div>
             <h1 class="m-2 text-4xl font-bold text-neutral-content">My name is Wesley Randolph</h1>

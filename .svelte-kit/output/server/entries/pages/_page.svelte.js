@@ -1,6 +1,6 @@
 import { S as fallback, a1 as store_get, a2 as unsubscribe_stores, W as bind_props, R as pop, P as push, Z as ensure_array_like, T as escape_html, $ as stringify, a3 as add_styles } from "../../chunks/index2.js";
+import { b as base } from "../../chunks/paths.js";
 import { a as attr, m as myThemeColors } from "../../chunks/themeUtils.js";
-const myPhoto = "/wesley7104.github.io/_app/immutable/assets/MyCartoonPhoto.DV6-aHnP.png";
 const services = [
   {
     title: "Web Development",
@@ -106,15 +106,13 @@ function _page($$payload, $$props) {
       const g = parseInt(hexColor.slice(3, 5), 16);
       const b = parseInt(hexColor.slice(5, 7), 16);
       filterValue = `invert(${r / 255 * 100}%) sepia(${g / 255 * 100}%) saturate(${b / 255 * 100}%) hue-rotate(${Math.atan2(b - r, g - r) * 180 / Math.PI}deg)`;
-      console.log("converted filterValue: ", filterValue);
     } else {
       filterValue = hexColor;
-      console.log("un-converted filterValue: ", filterValue);
     }
     return filterValue;
   }
   const each_array = ensure_array_like(services);
-  $$payload.out += `<main class="bg-neutral"><div class="hero min-h-auto p-10 from-neutral via-neutral to-accent bg-gradient-to-tl"><div class="hero-content flex-col lg:flex-row"><img alt="Wesley's Professional Headshot"${attr("src", myPhoto)} class="max-w-sm rounded-full shadow-lg"> <div><h1 class="m-2 text-4xl font-bold text-neutral-content">My name is Wesley Randolph</h1> <p class="m-2 py-4 text-3xl font-bold text-neutral-content">I am a <span class="text-3xl font-black from-neutral to-neutral-content bg-gradient-to-r"><span class="text-5xl font-bold from-accent via-neutral to-primary bg-gradient-to-r bg-clip-text text-transparent">${escape_html(typedChars)}</span></span></p> <p class="m-2 pb-4 text-xl font-bold text-neutral-content">A man of many talents and yet a Master of none! 🤣</p> <button class="m-2 btn btn-accent shadow-md">See my work.</button> <button class="m-2 btn btn-primary shadow-md">Setup a Meeting!</button></div></div></div> <div class="divider divider-accent opacity-50 w-3/4 mx-auto"></div> <div${attr("class", `flex w-full p-4 flex-col lg:flex-row from-neutral via-neutral to-accent bg-gradient-to-br on:enter=${stringify(mousemove)} on:leave=${stringify(mouseleave)} svelte-1wivkx2`)}>`;
+  $$payload.out += `<main class="bg-neutral"><div class="hero min-h-auto p-10 from-neutral via-neutral to-accent bg-gradient-to-tl"><div class="hero-content flex-col lg:flex-row"><img alt="Wesley's Professional Headshot"${attr("src", `${stringify(base)}/images/MyCartoonPhoto.png`)} class="max-w-sm rounded-full shadow-lg"> <div><h1 class="m-2 text-4xl font-bold text-neutral-content">My name is Wesley Randolph</h1> <p class="m-2 py-4 text-3xl font-bold text-neutral-content">I am a <span class="text-3xl font-black from-neutral to-neutral-content bg-gradient-to-r"><span class="text-5xl font-bold from-accent via-neutral to-primary bg-gradient-to-r bg-clip-text text-transparent">${escape_html(typedChars)}</span></span></p> <p class="m-2 pb-4 text-xl font-bold text-neutral-content">A man of many talents and yet a Master of none! 🤣</p> <button class="m-2 btn btn-accent shadow-md">See my work.</button> <button class="m-2 btn btn-primary shadow-md">Setup a Meeting!</button></div></div></div> <div class="divider divider-accent opacity-50 w-3/4 mx-auto"></div> <div${attr("class", `flex w-full p-4 flex-col lg:flex-row from-neutral via-neutral to-accent bg-gradient-to-br on:enter=${stringify(mousemove)} on:leave=${stringify(mouseleave)} svelte-1wivkx2`)}>`;
   if (m.x > 0 || m.y > 0) {
     $$payload.out += "<!--[-->";
     $$payload.out += `<div${add_styles({
