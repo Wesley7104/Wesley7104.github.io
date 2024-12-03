@@ -938,7 +938,7 @@ function ensure_array_like(array_like_or_iterator) {
   return [];
 }
 export {
-  stringify as $,
+  fallback as $,
   effect_root as A,
   BROWSER as B,
   CLEAN as C,
@@ -962,10 +962,10 @@ export {
   UNOWNED as U,
   bind_props as V,
   head as W,
-  getContext as X,
-  store_get as Y,
-  unsubscribe_stores as Z,
-  fallback as _,
+  stringify as X,
+  getContext as Y,
+  store_get as Z,
+  unsubscribe_stores as _,
   active_reaction as a,
   add_styles as a0,
   current_component as a1,

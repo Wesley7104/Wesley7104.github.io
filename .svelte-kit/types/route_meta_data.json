@@ -1,5 +1,9 @@
 {
-	"/": [],
-	"/SVGtesting": [],
-	"/[...404]": []
+	"/": [
+		"src/routes/+layout.js",
+		"src/routes/+layout.js"
+	],
+	"/SVGtesting": [
+		"src/routes/+layout.js"
+	]
 }

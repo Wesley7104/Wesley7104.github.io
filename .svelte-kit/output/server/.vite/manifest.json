@@ -5,7 +5,8 @@
     "src": ".svelte-kit/generated/server/internal.js",
     "isEntry": true,
     "imports": [
-      "_internal.js"
+      "_internal.js",
+      "_paths.js"
     ]
   },
   "_equality.js": {
@@ -33,8 +34,13 @@
     "name": "internal",
     "imports": [
       "_index2.js",
-      "_equality.js"
+      "_equality.js",
+      "_paths.js"
     ]
+  },
+  "_paths.js": {
+    "file": "chunks/paths.js",
+    "name": "paths"
   },
   "_themeUtils.js": {
     "file": "chunks/themeUtils.js",
@@ -64,15 +70,22 @@
     "src": "node_modules/@sveltejs/kit/src/runtime/server/index.js",
     "isEntry": true,
     "imports": [
-      "_internal.js",
+      "_paths.js",
       "_exports.js",
       "_index.js",
+      "_internal.js",
       "_index2.js"
     ]
   },
   "src/lib/MyCartoonPhoto.png": {
     "file": "_app/immutable/assets/MyCartoonPhoto.DV6-aHnP.png",
     "src": "src/lib/MyCartoonPhoto.png"
+  },
+  "src/routes/+layout.js": {
+    "file": "entries/pages/_layout.js",
+    "name": "entries/pages/_layout",
+    "src": "src/routes/+layout.js",
+    "isEntry": true
   },
   "src/routes/+layout.svelte": {
     "file": "entries/pages/_layout.svelte.js",
@@ -81,11 +94,12 @@
     "isEntry": true,
     "imports": [
       "_index2.js",
+      "_paths.js",
       "_themes.js",
       "_themeUtils.js"
     ],
     "css": [
-      "_app/immutable/assets/_layout.BWZ_adqU.css"
+      "_app/immutable/assets/_layout.D5OBITFQ.css"
     ]
   },
   "src/routes/+page.svelte": {
@@ -116,15 +130,6 @@
     ],
     "css": [
       "_app/immutable/assets/_page.L6wN1058.css"
-    ]
-  },
-  "src/routes/[...404]/+page.svelte": {
-    "file": "entries/pages/_...404_/_page.svelte.js",
-    "name": "entries/pages/_...404_/_page.svelte",
-    "src": "src/routes/[...404]/+page.svelte",
-    "isEntry": true,
-    "css": [
-      "_app/immutable/assets/_page.B5ArI6hO.css"
     ]
   }
 }

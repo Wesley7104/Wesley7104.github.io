@@ -1,19 +1,6 @@
 import { a as active_reaction, i as is_runes, D as DERIVED, b as BLOCK_EFFECT, d as derived_sources, s as state_unsafe_mutation, c as increment_version, e as DIRTY, f as set_signal_status, C as CLEAN, U as UNOWNED, g as schedule_effect, M as MAYBE_DIRTY, h as active_effect, j as BRANCH_EFFECT, n as new_deps, u as untracked_writes, k as set_untracked_writes, H as HYDRATION_ERROR, l as get_next_sibling, m as define_property, o as set_active_reaction, p as set_active_effect, q as is_array, r as init_operations, t as get_first_child, v as HYDRATION_START, w as HYDRATION_END, x as hydration_failed, y as clear_text_content, z as array_from, A as effect_root, E as create_text, F as branch, G as push, I as pop, J as component_context, K as get, L as LEGACY_PROPS, N as flush_sync, O as render, P as push$1, Q as setContext, R as pop$1 } from "./index2.js";
 import { s as safe_equals, e as equals } from "./equality.js";
-let base = "/wesley7104.github.io";
-let assets = base;
-const initial = { base, assets };
-function override(paths) {
-  base = paths.base;
-  assets = paths.assets;
-}
-function reset() {
-  base = initial.base;
-  assets = initial.assets;
-}
-function set_assets(path) {
-  assets = initial.assets = path;
-}
+import "./paths.js";
 let public_env = {};
 let safe_public_env = {};
 function set_private_env(environment) {
@@ -547,7 +534,7 @@ const options = {
   root,
   service_worker: false,
   templates: {
-    app: ({ head, body, assets: assets2, nonce, env }) => '<!doctype html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n		<link rel="icon" href="' + assets2 + '/favicon.png" />\n		<meta name="viewport" content="width=device-width, initial-scale=1" />\n		' + head + '\n	</head>\n	<body data-sveltekit-preload-data="hover">\n		<div style="display: contents">' + body + "</div>\n	</body>\n</html>\n",
+    app: ({ head, body, assets, nonce, env }) => '<!doctype html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n		<link rel="icon" href="' + assets + '/favicon.png" />\n		<meta name="viewport" content="width=device-width, initial-scale=1" />\n		' + head + '\n	</head>\n	<body data-sveltekit-preload-data="hover">\n		<div style="display: contents">' + body + "</div>\n	</body>\n</html>\n",
     error: ({ status, message }) => '<!doctype html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n		<title>' + message + `</title>
 
 		<style>
@@ -619,28 +606,23 @@ const options = {
 		<div class="error">
 			<span class="status">` + status + '</span>\n			<div class="message">\n				<h1>' + message + "</h1>\n			</div>\n		</div>\n	</body>\n</html>\n"
   },
-  version_hash: "z5l66v"
+  version_hash: "16wvpxb"
 };
 async function get_hooks() {
   return {};
 }
 export {
-  assets as a,
-  base as b,
-  read_implementation as c,
-  options as d,
-  set_private_env as e,
-  prerendering as f,
-  set_public_env as g,
-  get_hooks as h,
-  set_safe_public_env as i,
-  set_read_implementation as j,
-  set_assets as k,
-  set_building as l,
-  set_manifest as m,
-  set_prerendering as n,
-  override as o,
+  set_private_env as a,
+  prerendering as b,
+  set_public_env as c,
+  set_safe_public_env as d,
+  set_read_implementation as e,
+  set_building as f,
+  get_hooks as g,
+  set_manifest as h,
+  set_prerendering as i,
+  options as o,
   public_env as p,
-  reset as r,
+  read_implementation as r,
   safe_public_env as s
 };

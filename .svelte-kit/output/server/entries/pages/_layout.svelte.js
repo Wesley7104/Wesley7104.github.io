@@ -1,4 +1,5 @@
-import { S as ensure_array_like, T as escape_html, V as bind_props, R as pop, P as push, W as head } from "../../chunks/index2.js";
+import { S as ensure_array_like, T as escape_html, V as bind_props, R as pop, P as push, W as head, X as stringify } from "../../chunks/index2.js";
+import { b as base } from "../../chunks/paths.js";
 import { t as themes } from "../../chunks/themes.js";
 import { a as attr, s as setThemeColors } from "../../chunks/themeUtils.js";
 import "daisyui/src/theming/themes.js";
@@ -46,7 +47,7 @@ function _layout($$payload, $$props) {
         </style>
     `)}`;
   });
-  $$payload.out += `<div class="navbar bg-primary text-primary-content"><div class="navbar-start"><div class="dropdown"><div tabindex="0" role="button" class="btn btn-neutral-content md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"></path></svg></div> <ul class="menu menu-sm dropdown-content bg-primary rounded-box z-[1] mt-3 w-52 p-2 shadow"><li><a href="#aboutMe">About</a></li> <li><a href="/">Projects</a></li> <li><a href="/">Contact</a></li></ul></div> <a href="/" class="btn btn-ghost hover:bg-neutral hover:text-accent text-xl">RanDev.tech</a></div> <div class="navbar-center hidden md:flex"><ul class="menu menu-horizontal px-1 text-xl"><li><a href="#aboutMe">About</a></li> <li><a href="/">Projects</a></li> <li><a href="/">Contact</a></li></ul></div> <div class="navbar-end">`;
+  $$payload.out += `<div class="navbar bg-primary text-primary-content"><div class="navbar-start"><div class="dropdown"><div tabindex="0" role="button" class="btn btn-neutral-content md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"></path></svg></div> <ul class="menu menu-sm dropdown-content bg-primary rounded-box z-[1] mt-3 w-52 p-2 shadow"><li><a${attr("href", `${stringify(base)}/#aboutMe`)}>About</a></li> <li><a${attr("href", `${stringify(base)}/`)}>Projects</a></li> <li><a${attr("href", `${stringify(base)}/`)}>Contact</a></li></ul></div> <a${attr("href", `${stringify(base)}/`)} class="btn btn-ghost hover:bg-neutral hover:text-accent text-xl">RanDev.tech</a></div> <div class="navbar-center hidden md:flex"><ul class="menu menu-horizontal px-1 text-xl"><li><a${attr("href", `${stringify(base)}/#aboutMe`)}>About</a></li> <li><a${attr("href", `${stringify(base)}/`)}>Projects</a></li> <li><a${attr("href", `${stringify(base)}/`)}>Contact</a></li></ul></div> <div class="navbar-end">`;
   Theme_select($$payload, {});
   $$payload.out += `<!----></div></div> `;
   children($$payload);

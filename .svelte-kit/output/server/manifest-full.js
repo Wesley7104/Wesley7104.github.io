@@ -10,13 +10,12 @@ return {
 	assets: new Set([".nojekyll","chat-bubbles-animation.svg","clipboard-checkmark.svg","favicon.png"]),
 	mimeTypes: {".svg":"image/svg+xml",".png":"image/png"},
 	_: {
-		client: {"start":"_app/immutable/entry/start.DlfIjDzO.js","app":"_app/immutable/entry/app.DQ34ig5Z.js","imports":["_app/immutable/entry/start.DlfIjDzO.js","_app/immutable/chunks/entry.B29J9uFn.js","_app/immutable/chunks/runtime.DC-W0gab.js","_app/immutable/chunks/index.DaxGK8jJ.js","_app/immutable/entry/app.DQ34ig5Z.js","_app/immutable/chunks/runtime.DC-W0gab.js","_app/immutable/chunks/render.BNLsGbc-.js","_app/immutable/chunks/disclose-version.LF6uEfVi.js","_app/immutable/chunks/if.C3oJOqFo.js","_app/immutable/chunks/proxy.DVFOf8vq.js","_app/immutable/chunks/props.B3I_BOC7.js","_app/immutable/chunks/store.PL20Q_Fj.js","_app/immutable/chunks/index-client.Bwolq2BZ.js"],"stylesheets":[],"fonts":[],"uses_env_dynamic_public":false},
+		client: {"start":"_app/immutable/entry/start.D8Unw8D2.js","app":"_app/immutable/entry/app.BJOFh-Qm.js","imports":["_app/immutable/entry/start.D8Unw8D2.js","_app/immutable/chunks/entry.C9uW8EJs.js","_app/immutable/chunks/runtime.xYmJmHuE.js","_app/immutable/chunks/index.Iz4m9yUR.js","_app/immutable/chunks/paths.CwDXuZ6J.js","_app/immutable/entry/app.BJOFh-Qm.js","_app/immutable/chunks/runtime.xYmJmHuE.js","_app/immutable/chunks/render.CMCEtneS.js","_app/immutable/chunks/disclose-version.Ckhth3iH.js","_app/immutable/chunks/if.BTNJ8s4Q.js","_app/immutable/chunks/index-client.DkgOBrhm.js","_app/immutable/chunks/props.CjYUR4wN.js","_app/immutable/chunks/store.Ct6u_tSY.js"],"stylesheets":[],"fonts":[],"uses_env_dynamic_public":false},
 		nodes: [
 			__memo(() => import('./nodes/0.js')),
 			__memo(() => import('./nodes/1.js')),
 			__memo(() => import('./nodes/2.js')),
-			__memo(() => import('./nodes/3.js')),
-			__memo(() => import('./nodes/4.js'))
+			__memo(() => import('./nodes/3.js'))
 		],
 		routes: [
 			{
@@ -31,13 +30,6 @@ return {
 				pattern: /^\/SVGtesting\/?$/,
 				params: [],
 				page: { layouts: [0,], errors: [1,], leaf: 3 },
-				endpoint: null
-			},
-			{
-				id: "/[...404]",
-				pattern: /^(?:\/(.*))?\/?$/,
-				params: [{"name":"404","optional":false,"rest":true,"chained":true}],
-				page: { layouts: [0,], errors: [1,], leaf: 4 },
 				endpoint: null
 			}
 		],

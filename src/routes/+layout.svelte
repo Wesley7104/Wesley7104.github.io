@@ -1,6 +1,7 @@
 <script lang="ts">
 	import '../app.css';
 	import "tailwindcss/tailwind.css";
+  import { base } from '$app/paths';
     import ThemeSelect from "$lib/theme-select.svelte";
     import { getTheme, setThemeColors } from "$lib/themeUtils";
     import { onMount } from 'svelte';
@@ -49,18 +50,18 @@
           </svg>
         </div>
         <ul class="menu menu-sm dropdown-content bg-primary rounded-box z-[1] mt-3 w-52 p-2 shadow">
-          <li><a href="#aboutMe">About</a></li>
-          <li><a href="/">Projects</a></li>
-          <li><a href="/">Contact</a></li>
+          <li><a href="{base}/#aboutMe">About</a></li>
+          <li><a href="{base}/">Projects</a></li>
+          <li><a href="{base}/">Contact</a></li>
         </ul>
       </div>
-      <a href="/" class="btn btn-ghost hover:bg-neutral hover:text-accent text-xl">RanDev.tech</a>
+      <a href="{base}/" class="btn btn-ghost hover:bg-neutral hover:text-accent text-xl">RanDev.tech</a>
     </div>
     <div class="navbar-center hidden md:flex">
       <ul class="menu menu-horizontal px-1 text-xl">
-        <li><a href="#aboutMe">About</a></li>
-        <li><a href="/">Projects</a></li>
-        <li><a href="/">Contact</a></li>
+        <li><a href="{base}/#aboutMe">About</a></li>
+        <li><a href="{base}/">Projects</a></li>
+        <li><a href="{base}/">Contact</a></li>
       </ul>
     </div>
     <div class="navbar-end">
