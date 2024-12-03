@@ -1,6 +1,6 @@
 import { _ as fallback, Y as store_get, Z as unsubscribe_stores, V as bind_props, R as pop, P as push, S as ensure_array_like, T as escape_html, $ as stringify, a0 as add_styles } from "../../chunks/index2.js";
 import { a as attr, m as myThemeColors } from "../../chunks/themeUtils.js";
-const myPhoto = "/_app/immutable/assets/MyCartoonPhoto.DV6-aHnP.png";
+const myPhoto = "/wesley7104.github.io/_app/immutable/assets/MyCartoonPhoto.DV6-aHnP.png";
 const services = [
   {
     title: "Web Development",
