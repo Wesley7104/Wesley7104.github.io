@@ -2,6 +2,7 @@
 	import '../app.css';
 	import "tailwindcss/tailwind.css";
   import { base } from '$app/paths';
+  import FaGithubSquare from 'svelte-icons/fa/FaGithubSquare.svelte'
     import ThemeSelect from "$lib/theme-select.svelte";
     import { getTheme, setThemeColors } from "$lib/themeUtils";
     import { onMount } from 'svelte';
@@ -70,3 +71,14 @@
   </div>
 
 {@render children()}
+
+<!-- Footer -->
+<footer class="footer footer-center p-4 bg-primary text-primary-content">
+  <div class="flex flex-row items-center justify-center">
+    
+    <a href="https://github.com/wesley7104" class="btn btn-square btn-ghost hover:bg-neutral hover:text-accent m-2">
+      <FaGithubSquare />
+    </a>
+    <p>Copyright © 2024 - All right reserved by RanDev.tech</p>
+  </div>
+</footer>

@@ -1,4 +1,4 @@
-import { a1 as current_component, $ as fallback, V as bind_props, R as pop, P as push } from "../../../chunks/index2.js";
+import { a4 as current_component, S as fallback, W as bind_props, R as pop, P as push } from "../../../chunks/index2.js";
 import "animejs";
 import { w as writable } from "../../../chunks/index.js";
 import { gsap } from "gsap";

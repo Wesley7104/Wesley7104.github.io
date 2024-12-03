@@ -887,6 +887,22 @@ function head(payload, fn) {
   fn(head_payload);
   head_payload.out += BLOCK_CLOSE;
 }
+function spread_props(props) {
+  const merged_props = {};
+  let key;
+  for (let i = 0; i < props.length; i++) {
+    const obj = props[i];
+    for (key in obj) {
+      const desc = Object.getOwnPropertyDescriptor(obj, key);
+      if (desc) {
+        Object.defineProperty(merged_props, key, desc);
+      } else {
+        merged_props[key] = obj[key];
+      }
+    }
+  }
+  return merged_props;
+}
 function stringify(value) {
   return typeof value === "string" ? value : value == null ? "" : value + "";
 }
@@ -922,6 +938,19 @@ function unsubscribe_stores(store_values) {
     store_values[store_name][1]();
   }
 }
+function slot(payload, $$props, name, slot_props, fallback_fn) {
+  var slot_fn = $$props.$$slots?.[name];
+  if (slot_fn === true) {
+    slot_fn = $$props["children"];
+  }
+  if (slot_fn !== void 0) {
+    slot_fn(payload, slot_props);
+  }
+}
+function sanitize_props(props) {
+  const { children, $$slots, ...sanitized } = props;
+  return sanitized;
+}
 function bind_props(props_parent, props_now) {
   for (const key in props_now) {
     const initial_value = props_parent[key];
@@ -938,7 +967,7 @@ function ensure_array_like(array_like_or_iterator) {
   return [];
 }
 export {
-  fallback as $,
+  stringify as $,
   effect_root as A,
   BROWSER as B,
   CLEAN as C,
@@ -957,19 +986,22 @@ export {
   push as P,
   setContext as Q,
   pop as R,
-  ensure_array_like as S,
+  fallback as S,
   escape_html as T,
   UNOWNED as U,
-  bind_props as V,
-  head as W,
-  stringify as X,
-  getContext as Y,
-  store_get as Z,
-  unsubscribe_stores as _,
+  slot as V,
+  bind_props as W,
+  spread_props as X,
+  sanitize_props as Y,
+  ensure_array_like as Z,
+  head as _,
   active_reaction as a,
-  add_styles as a0,
-  current_component as a1,
-  noop as a2,
+  getContext as a0,
+  store_get as a1,
+  unsubscribe_stores as a2,
+  add_styles as a3,
+  current_component as a4,
+  noop as a5,
   BLOCK_EFFECT as b,
   increment_version as c,
   derived_sources as d,

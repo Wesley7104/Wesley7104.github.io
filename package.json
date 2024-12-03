@@ -43,6 +43,7 @@
 		"gsap": "^3.12.5",
 		"lottie-colorify": "^0.8.0",
 		"lottie-web": "^5.12.2",
-		"lucide-svelte": "^0.462.0"
+		"lucide-svelte": "^0.462.0",
+		"svelte-icons": "^2.1.0"
 	}
 }
