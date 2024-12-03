@@ -43,6 +43,7 @@
 				current_theme = theme;
 			} else {
 				current_theme = 'business';
+				set_theme(current_theme);
 			}
 		}
 	});
