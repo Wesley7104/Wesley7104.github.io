@@ -4,6 +4,12 @@ node_modules
 .output
 .vercel
 
+# Build
+/build
+
+# SvelteKit
+/.svelte-kit
+
 # OS
 .DS_Store
 Thumbs.db
