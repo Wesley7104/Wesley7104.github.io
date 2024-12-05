@@ -67,12 +67,12 @@
           <li><a href="{base}/#aboutMe">About</a></li>
           <li><a href="{base}/">Projects</a></li>
           <li><a href="{base}/">Contact</a></li>
-        </ul>
-        {#if $isMobile}
+          {#if $isMobile}
           <div class="navbar-end">
               <ThemeSelect />
           </div>
         {/if}
+        </ul>
       </div>
       <a href="{base}/" class="btn btn-ghost hover:bg-neutral hover:text-accent text-xl">RanDev.tech</a>
     </div>
