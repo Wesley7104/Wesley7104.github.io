@@ -63,7 +63,7 @@
               d="M4 6h16M4 12h8m-8 6h16" />
           </svg>
         </div>
-        <ul class="menu menu-sm dropdown-content bg-primary rounded-box z-[1] mt-3 w-52 p-2 shadow">
+        <ul class="menu menu-sm dropdown-content bg-primary rounded-box z-[1] mt-3 w-auto p-2 shadow">
           <li><a href="{base}/#aboutMe">About</a></li>
           <li><a href="{base}/">Projects</a></li>
           <li><a href="{base}/">Contact</a></li>
