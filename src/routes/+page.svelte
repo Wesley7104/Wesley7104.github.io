@@ -8,6 +8,7 @@
     import DesignIcon from '$lib/components/DesignIcon.svelte';
     import IntegrationIcon from '$lib/components/IntegrationIcon.svelte';
     import TechConsultingIcon from '$lib/components/TechConsultingIcon.svelte';
+    import Twinkle from '$lib/components/Twinkle.svelte';
     let words = ["Christian", "Father", "Husband", "Developer", "Integrator", "Designer", "Tech Consultant", "Day Trader"]; // Array of all words
     let currentWordIndex = 0;
     let currentCharIndex = 0;
@@ -78,6 +79,29 @@
         document.documentElement.style.setProperty('--secondary-color-filter', getColorFilterValue($myThemeColors.secondary));
     });
  */
+// Add these state variables
+let coinFace = $state(`url(${base}/images/MyCartoonPhoto.png)`);
+let coinColor = $state('#be9d66'); //#be9d66 Gold
+let coinSideColor = $state('#896c3b'); //#896c3b Darker Gold
+let coinSideDarkColor = $state('#120e08'); //#120e08 Darkest Gold
+let coinLowlightColor = $state('#111'); //#111 Darkest Shadow
+let coinSize = $state('250px');
+let coinSpeed = $state('3s');
+let coinThickness = $state('1rem');
+
+// You can update these values dynamically as needed
+$effect(() => {
+    document.documentElement.style.setProperty('--coin-face', coinFace);
+    document.documentElement.style.setProperty('--face', coinColor);
+    document.documentElement.style.setProperty('--side', coinSideColor);
+    document.documentElement.style.setProperty('--side-dark', coinSideDarkColor);
+    document.documentElement.style.setProperty('--lowlight', coinLowlightColor);
+    document.documentElement.style.setProperty('--coin-size', coinSize);
+    document.documentElement.style.setProperty('--coin-speed', coinSpeed);
+    document.documentElement.style.setProperty('--coin-thickness', coinThickness);
+});
+
+
     onMount(() => {
         startTyping();
         
@@ -89,10 +113,26 @@
     <!-- Hero Section -->
     <div class="hero min-h-auto p-10 from-neutral via-neutral to-accent bg-gradient-to-tl">
         <div class="hero-content flex-col lg:flex-row">
-        <img
-            alt="Wesley's Professional Headshot"
-            src="{base}/images/MyCartoonPhoto.png"
-            class="max-w-sm rounded-full shadow-lg" />
+        <div class="relative coin-container">
+            <div class="coin">
+                <!-- <div class="side front">
+                    <img
+                        alt="Wesley's Professional Headshot"
+                        src="{base}/images/MyCartoonPhoto.png"
+                        class="w-full h-full object-cover" />
+                </div>
+                <div class="side edge"></div>
+                <div class="side back">
+                    <img
+                        alt="Wesley's Professional Headshot"
+                        src="{base}/images/MyCartoonPhoto.png"
+                        class="w-full h-full object-cover" />
+                </div> -->
+            </div>
+            <!-- <div class="absolute top-[5%] right-[5%] w-[40px] h-[40px]">
+                <Twinkle size="100%" color={$myThemeColors.secondary} duration={1200} />
+            </div> -->
+        </div>
         <div>
             <h1 class="m-2 text-4xl font-bold text-neutral-content">My name is Wesley Randolph</h1>
             <p class="m-2 py-4 text-3xl font-bold text-neutral-content">
@@ -123,13 +163,14 @@
         <div class="card m-3 p-0 bg-primary bg-opacity-35 rounded-box grid flex-grow place-items-center">
             <div class="card-header">
                   {#if service.icon === 'WebDevIcon'}
-                    <WebDevIcon size="144px" />
+                    <WebDevIcon size="196px" />
                   {:else if service.icon === 'IntegrationIcon'}
                     <IntegrationIcon size="196px" />
                   {/if}
             </div>
             <div class="card-body">
-                <h3 class="card-title text-3xl font-bold text-neutral-content">{service.title}</h3>
+                <h3 class="card-title text-3xl font-bold text-neutral-content">{service.title}<Twinkle size="100%" color="rgba(255,255,255,0.8)" duration={1200} /></h3>
+                
                 <div class="divider divider-secondary w-1/2"></div>
                 <p class="text-lg text-primary-content">
                     {service.description}
@@ -304,18 +345,138 @@
 
 
 <style>
-  .blob {
-  filter: blur(40px);
-  position: absolute;
-  top: -100px;
-  left: -100px;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  background: rgb(255, 255, 255, 0.5);
-	pointer-events:none;
+    :root {
+  --face: #be9d66;
+  --lowlight: #111;
+  --side: #896c3b;
+  --side-dark: #120e08;
+  --coin-size: 7rem;
+  --coin-face: none;
+}
+/*
+  everything above is positioning and variables.
+  this is where the real fun begins...
+*/
+
+.coin {
+  height: var(--coin-size);
+  width: var(--coin-size);
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  filter: drop-shadow(0px 15px 15px var(--lowlight));
 }
 
+.coin::before {
+  content: '';
+  display: block;
+  position: relative;
+  height: var(--coin-size);
+  width: var(--coin-size);
+  border-radius: 50%;
+  background-color: var(--face);
+  animation: spin var(--coin-speed) linear infinite;
+  background-image: var(--coin-face);
+  background-size: 100% 100%;
+  background-position: center;
+  background-blend-mode: overlay;
+  background-repeat: no-repeat;
+}
+
+.coin.flip::before {
+  animation-name: flip;
+}
+
+
+/* animation definitions */
+
+.coin {
+  /* ... existing styles ... */
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes spin {
+  /* Front face of coin (0%) */
+  0% {
+    width: var(--coin-size); /* Full width */
+    box-shadow:
+      0 0 0 var(--side-dark); /* No side shadow */
+    animation-timing-function: ease-in;
+  }
+  
+  49.999% {
+    width: 0.2rem; /* This controls how "thin" the coin looks when viewing the edge */
+    /* Multiple box shadows create the "ridged" edge effect */
+    box-shadow:
+      0.05rem 0 var(--side),
+      0.1rem 0 var(--side),
+      0.15rem 0 var(--side),
+      0.2rem 0 var(--side),
+      0.25rem 0 var(--side),
+      0.3rem 0 var(--side),
+      0.35rem 0 var(--side),
+      0.4rem 0 var(--side),
+      0.45rem 0 0 var(--side),
+      0.5rem 0 0 var(--side),
+      0.55rem 0 0 var(--side),
+      0.6rem 0 0 var(--side),
+      0.65rem 0 0 var(--side),
+      0.7rem 0 0 var(--side),
+      0.75rem 0 0 var(--side),
+      var(--coin-thickness) 0 0 var(--side);
+    transform: translateX(calc(var(--coin-thickness) * -0.5));
+    background-color: var(--lowlight);
+    animation-timing-function: linear;
+  }
+  
+  50.001% {
+    width: 0.2rem; /* This controls how "thin" the coin looks when viewing the edge */
+    /* Multiple box shadows create the "ridged" edge effect */
+    box-shadow:
+      -0.05rem 0 0 var(--side),
+      -0.1rem 0 0 var(--side),
+      -0.15rem 0 0 var(--side),
+      -0.2rem 0 0 var(--side),
+      -0.25rem 0 0 var(--side),
+      -0.3rem 0 0 var(--side),
+      -0.35rem 0 0 var(--side),
+      -0.4rem 0 0 var(--side),
+      -0.45rem 0 0 var(--side),
+      -0.5rem 0 0 var(--side),
+      -0.55rem 0 0 var(--side),
+      -0.6rem 0 0 var(--side),
+      -0.65rem 0 0 var(--side),
+      -0.7rem 0 0 var(--side),
+      -0.75rem 0 0 var(--side),
+      calc(var(--coin-thickness) * -1) 0 0 var(--side);
+    transform: translateX(calc(var(--coin-thickness) * 0.5));
+    background-color: var(--lowlight);
+    animation-timing-function: ease-out;
+  }
+  
+  /* Back to front face (100%) */
+  100% {
+    width: var(--coin-size);
+    box-shadow:
+      0 0 0 var(--side-dark);
+  }
+}
+
+/* pause animation on hover */
+.coin:hover::before {
+  animation-play-state: paused;
+}
 
 </style>
 
