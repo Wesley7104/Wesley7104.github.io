@@ -6,6 +6,10 @@
     import ThemeSelect from "$lib/theme-select.svelte";
     import { getTheme, setThemeColors, myThemeColors } from "$lib/themeUtils";
     import { onMount } from 'svelte';
+    import { writable } from 'svelte/store';
+
+    const isMobile = writable(false);
+
     onMount(() => {
         const currentTheme = getTheme();
         if (currentTheme) {
@@ -13,6 +17,16 @@
         } else {
             setThemeColors('business');
         } 
+        // Set initial value
+        $isMobile = window.innerWidth <= 768;
+        
+        // Add resize listener
+        const handleResize = () => {
+            $isMobile = window.innerWidth <= 768;
+        };
+        
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
     });
 
 	let { children } = $props();
@@ -54,11 +68,11 @@
           <li><a href="{base}/">Projects</a></li>
           <li><a href="{base}/">Contact</a></li>
         </ul>
-        {#if globalThis.window.innerWidth <= 768}
-        <div class="navbar-end">
-            <ThemeSelect />
-        </div>
-      {/if}
+        {#if $isMobile}
+          <div class="navbar-end">
+              <ThemeSelect />
+          </div>
+        {/if}
       </div>
       <a href="{base}/" class="btn btn-ghost hover:bg-neutral hover:text-accent text-xl">RanDev.tech</a>
     </div>
@@ -69,7 +83,7 @@
         <li><a href="{base}/">Contact</a></li>
       </ul>
     </div>
-      {#if globalThis.window.innerWidth >= 768}
+      {#if !$isMobile}
         <div class="navbar-end">
             <ThemeSelect />
         </div>
