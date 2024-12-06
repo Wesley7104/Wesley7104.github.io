@@ -73,7 +73,7 @@
         repeat: 0, // number of repeats (-1 for infinite)
         repeatDelay: 1, // seconds between repeats
         repeatRefresh: false, // invalidates on each repeat
-        yoyo: true, // if true > A-B-B-A, if false > A-B-A-B
+        yoyo: true, // if true = A-B-B-A, if false = A-B-A-B
         //defaults: {
             // children inherit these defaults
             //duration: 1,
@@ -108,13 +108,12 @@
         /* console.log(myTheme);
         console.log(themeColors[theme]); */
         //console.log(primaryColor.primary);
-        unsubscribe = myThemeColors.subscribe(color => { //TODO Svelte Store stuff not working, explore runes as possible fix
-            console.log(color);
+        //unsubscribe = myThemeColors.subscribe(color => { //TODO Svelte Store stuff not working, explore runes as possible fix
+            //console.log(color);
             //console.log(color.primary);
             //console.log(myThemeColorsState);
             //console.log(myThemeColorsState.primary);
-        });
-        
+        //});
     });
 
     onDestroy(() => {
