@@ -82,9 +82,9 @@
 // Add these state variables
 let coinFace = $state(`url(${base}/images/MyCartoonPhoto.png)`);
 let coinBack = $state(`url(${base}/images/RDTcoinBack.png)`);
-let coinColor = $state('#be9d66'); //#be9d66 Gold
+let coinColor = $state('#896c3b'); //#be9d66 Gold
 let coinSideColor = $state('#dbaf36'); //#896c3b Darker Gold
-let coinSideDarkColor = $state('#bb962f'); //#120e08 Darkest Gold
+let coinSideDarkColor = $state('#977823'); //#120e08 Darkest Gold
 let coinLowlightColor = $state('#111'); //#111 Darkest Shadow
 let coinSize = $state('250px');
 let coinSpeed = $state('5s');
@@ -348,10 +348,10 @@ $effect(() => {
 
 <style>
     :root {
-  --face: #be9d66;
+  --face: #977b4a;
   --lowlight: #111;
   --side: #dbaf36;
-  --side-dark: #bb962f;
+  --side-dark: #977823;
   --coin-size: 1rem;
   --coin-face: none;
   --coin-back: none;
@@ -434,7 +434,7 @@ $effect(() => {
       1rem 0 0 var(--side),
       var(--coin-thickness) 0 0 var(--side);
       transform: translateX(calc(var(--coin-thickness) * -0.5));
-      background-color: var(--lowlight);
+      background-color: var(--side);
       background-image: var(--coin-face);
   }
   
@@ -540,7 +540,7 @@ $effect(() => {
       -1rem 0 0 var(--side),
       calc(var(--coin-thickness) * -1) 0 0 var(--side);
       transform: translateX(calc(var(--coin-thickness) * 0.5));
-    background-color: var(--side-dark);
+    background-color: var(--side);
     background-image: var(--coin-back);
  }
 }
