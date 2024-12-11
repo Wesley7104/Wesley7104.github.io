@@ -103,7 +103,7 @@
 
     <!-- Svelte Logo -->
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140" class="w-11 h-11">
-      <path fill={$myThemeColors.neutral} d="M110 28a34 34 0 0 0-46-9L38 35a30 30 0 0 0-13 20 32 32 0 0 0 3 20 30 30 0
+      <path fill={$myThemeColors.primary} d="M110 28a34 34 0 0 0-46-9L38 35a30 30 0 0 0-13 20 32 32 0 0 0 3 20 30 30 0
         0 0-5 12 32 32 0 0 0 6 24c10 15 31 19 46 10l26-17a30 30 0 0 0 13-20 32 32 0
         0 0-3-20 30 30 0 0 0 5-11 32 32 0 0 0-6-25">
       </path> 
