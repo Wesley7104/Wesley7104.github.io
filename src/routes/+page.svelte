@@ -479,45 +479,6 @@ $effect(() => {
     width: 0.2rem; /* This controls how "thin" the coin looks when viewing the edge */
     /* Multiple box shadows create the "ridged" edge effect */
     box-shadow:
-      -0.05rem 0 0 var(--side-dark),
-      -0.1rem 0 0 var(--side-dark),
-      -0.15rem 0 0 var(--side-dark),
-      -0.2rem 0 0 var(--side-dark),
-      -0.25rem 0 0 var(--side-dark),
-      -0.3rem 0 0 var(--side-dark),
-      -0.35rem 0 0 var(--side-dark),
-      -0.4rem 0 0 var(--side-dark),
-      -0.45rem 0 0 var(--side-dark),
-      -0.5rem 0 0 var(--side-dark),
-      -0.55rem 0 0 var(--side-dark),
-      -0.6rem 0 0 var(--side-dark),
-      -0.65rem 0 0 var(--side-dark),
-      -0.7rem 0 0 var(--side-dark),
-      -0.75rem 0 0 var(--side-dark),
-      -0.8rem 0 0 var(--side-dark),
-      -0.85rem 0 0 var(--side-dark),
-      -0.9rem 0 0 var(--side-dark),
-      -0.95rem 0 0 var(--side-dark),
-      -1rem 0 0 var(--side-dark),
-      calc(var(--coin-thickness) * -1) 0 0 var(--side-dark);
-      transform: translateX(calc(var(--coin-thickness) * 0.5));
-    background-color: var(--lowlight);
-    background-image: var(--coin-back);
-  }
-  
-  /* Back to front face (100%) */
-  75% {
-    width: var(--coin-size);
-    box-shadow: 0 0 0 var(--lowlight);
-    background-color: var(--face);
-    background-image: var(--coin-back);
-  }
-
-
- 100% {
-  width: 0.2rem; /* This controls how "thin" the coin looks when viewing the edge */
-    /* Multiple box shadows create the "ridged" edge effect */
-    box-shadow:
       -0.05rem 0 0 var(--side),
       -0.1rem 0 0 var(--side),
       -0.15rem 0 0 var(--side),
@@ -541,6 +502,45 @@ $effect(() => {
       calc(var(--coin-thickness) * -1) 0 0 var(--side);
       transform: translateX(calc(var(--coin-thickness) * 0.5));
     background-color: var(--side);
+    background-image: var(--coin-back);
+  }
+  
+  /* Back to front face (100%) */
+  75% {
+    width: var(--coin-size);
+    box-shadow: 0 0 0 var(--lowlight);
+    background-color: var(--face);
+    background-image: var(--coin-back);
+  }
+
+
+ 100% {
+  width: 0.2rem; /* This controls how "thin" the coin looks when viewing the edge */
+    /* Multiple box shadows create the "ridged" edge effect */
+    box-shadow:
+      -0.05rem 0 0 var(--side-dark),
+      -0.1rem 0 0 var(--side-dark),
+      -0.15rem 0 0 var(--side-dark),
+      -0.2rem 0 0 var(--side-dark),
+      -0.25rem 0 0 var(--side-dark),
+      -0.3rem 0 0 var(--side-dark),
+      -0.35rem 0 0 var(--side-dark),
+      -0.4rem 0 0 var(--side-dark),
+      -0.45rem 0 0 var(--side-dark),
+      -0.5rem 0 0 var(--side-dark),
+      -0.55rem 0 0 var(--side-dark),
+      -0.6rem 0 0 var(--side-dark),
+      -0.65rem 0 0 var(--side-dark),
+      -0.7rem 0 0 var(--side-dark),
+      -0.75rem 0 0 var(--side-dark),
+      -0.8rem 0 0 var(--side-dark),
+      -0.85rem 0 0 var(--side-dark),
+      -0.9rem 0 0 var(--side-dark),
+      -0.95rem 0 0 var(--side-dark),
+      -1rem 0 0 var(--side-dark),
+      calc(var(--coin-thickness) * -1) 0 0 var(--side-dark);
+      transform: translateX(calc(var(--coin-thickness) * 0.5));
+    background-color: var(--lowlight);
     background-image: var(--coin-back);
  }
 }
