@@ -81,17 +81,19 @@
  */
 // Add these state variables
 let coinFace = $state(`url(${base}/images/MyCartoonPhoto.png)`);
+let coinBack = $state(`url(${base}/images/RDTcoinBack.png)`);
 let coinColor = $state('#be9d66'); //#be9d66 Gold
-let coinSideColor = $state('#896c3b'); //#896c3b Darker Gold
-let coinSideDarkColor = $state('#120e08'); //#120e08 Darkest Gold
+let coinSideColor = $state('#dbaf36'); //#896c3b Darker Gold
+let coinSideDarkColor = $state('#bb962f'); //#120e08 Darkest Gold
 let coinLowlightColor = $state('#111'); //#111 Darkest Shadow
 let coinSize = $state('250px');
-let coinSpeed = $state('3s');
+let coinSpeed = $state('5s');
 let coinThickness = $state('1rem');
 
 // You can update these values dynamically as needed
 $effect(() => {
     document.documentElement.style.setProperty('--coin-face', coinFace);
+    document.documentElement.style.setProperty('--coin-back', coinBack);
     document.documentElement.style.setProperty('--face', coinColor);
     document.documentElement.style.setProperty('--side', coinSideColor);
     document.documentElement.style.setProperty('--side-dark', coinSideDarkColor);
@@ -136,10 +138,10 @@ $effect(() => {
         <div>
             <h1 class="m-2 text-4xl font-bold text-neutral-content">My name is Wesley Randolph</h1>
             <p class="m-2 py-4 text-3xl font-bold text-neutral-content">
-                I am a 
+                I am a
                 <span class="text-3xl font-black from-neutral to-neutral-content bg-gradient-to-r">
                     <span class="text-5xl font-bold from-accent via-neutral to-primary bg-gradient-to-r bg-clip-text text-transparent">
-                        {typedChars}
+                       {typedChars}
                     </span>
                 </span>
             </p>
@@ -348,10 +350,11 @@ $effect(() => {
     :root {
   --face: #be9d66;
   --lowlight: #111;
-  --side: #896c3b;
-  --side-dark: #120e08;
-  --coin-size: 7rem;
+  --side: #dbaf36;
+  --side-dark: #bb962f;
+  --coin-size: 1rem;
   --coin-face: none;
+  --coin-back: none;
 }
 /*
   everything above is positioning and variables.
@@ -378,17 +381,13 @@ $effect(() => {
   border-radius: 50%;
   background-color: var(--face);
   animation: spin var(--coin-speed) linear infinite;
-  background-image: var(--coin-face);
   background-size: 100% 100%;
   background-position: center;
   background-blend-mode: overlay;
   background-repeat: no-repeat;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
 }
-
-.coin.flip::before {
-  animation-name: flip;
-}
-
 
 /* animation definitions */
 
@@ -408,14 +407,8 @@ $effect(() => {
 
 @keyframes spin {
   /* Front face of coin (0%) */
+
   0% {
-    width: var(--coin-size); /* Full width */
-    box-shadow:
-      0 0 0 var(--side-dark); /* No side shadow */
-    animation-timing-function: ease-in;
-  }
-  
-  49.999% {
     width: 0.2rem; /* This controls how "thin" the coin looks when viewing the edge */
     /* Multiple box shadows create the "ridged" edge effect */
     box-shadow:
@@ -434,10 +427,170 @@ $effect(() => {
       0.65rem 0 0 var(--side),
       0.7rem 0 0 var(--side),
       0.75rem 0 0 var(--side),
+      0.8rem 0 0 var(--side),
+      0.85rem 0 0 var(--side),
+      0.9rem 0 0 var(--side),
+      0.95rem 0 0 var(--side),
+      1rem 0 0 var(--side),
       var(--coin-thickness) 0 0 var(--side);
-    transform: translateX(calc(var(--coin-thickness) * -0.5));
+      transform: translateX(calc(var(--coin-thickness) * -0.5));
+      background-color: var(--lowlight);
+      background-image: var(--coin-face);
+  }
+  
+  25% {
+    width: var(--coin-size); /* Full width */
+    box-shadow: 0 0 0 var(--lowlight); /* No side shadow */
+    background-color: var(--face);
+    background-image: var(--coin-face);
+  }
+
+  49.999% {
+    width: 0.2rem; /* This controls how "thin" the coin looks when viewing the edge */
+    /* Multiple box shadows create the "ridged" edge effect */
+    box-shadow:
+      0.05rem 0 var(--side-dark),
+      0.1rem 0 var(--side-dark),
+      0.15rem 0 var(--side-dark),
+      0.2rem 0 var(--side-dark),
+      0.25rem 0 var(--side-dark),
+      0.3rem 0 var(--side-dark),
+      0.35rem 0 var(--side-dark),
+      0.4rem 0 var(--side-dark),
+      0.45rem 0 0 var(--side-dark),
+      0.5rem 0 0 var(--side-dark),
+      0.55rem 0 0 var(--side-dark),
+      0.6rem 0 0 var(--side-dark),
+      0.65rem 0 0 var(--side-dark),
+      0.7rem 0 0 var(--side-dark),
+      0.75rem 0 0 var(--side-dark),
+      0.8rem 0 0 var(--side-dark),
+      0.85rem 0 0 var(--side-dark),
+      0.9rem 0 0 var(--side-dark),
+      0.95rem 0 0 var(--side-dark),
+      1rem 0 0 var(--side-dark),
+      var(--coin-thickness) 0 0 var(--side-dark);
+      transform: translateX(calc(var(--coin-thickness) * -0.5));
+      background-color: var(--lowlight);
+      background-image: var(--coin-face);
+  }
+  
+  50% {
+    width: 0.2rem; /* This controls how "thin" the coin looks when viewing the edge */
+    /* Multiple box shadows create the "ridged" edge effect */
+    box-shadow:
+      -0.05rem 0 0 var(--side-dark),
+      -0.1rem 0 0 var(--side-dark),
+      -0.15rem 0 0 var(--side-dark),
+      -0.2rem 0 0 var(--side-dark),
+      -0.25rem 0 0 var(--side-dark),
+      -0.3rem 0 0 var(--side-dark),
+      -0.35rem 0 0 var(--side-dark),
+      -0.4rem 0 0 var(--side-dark),
+      -0.45rem 0 0 var(--side-dark),
+      -0.5rem 0 0 var(--side-dark),
+      -0.55rem 0 0 var(--side-dark),
+      -0.6rem 0 0 var(--side-dark),
+      -0.65rem 0 0 var(--side-dark),
+      -0.7rem 0 0 var(--side-dark),
+      -0.75rem 0 0 var(--side-dark),
+      -0.8rem 0 0 var(--side-dark),
+      -0.85rem 0 0 var(--side-dark),
+      -0.9rem 0 0 var(--side-dark),
+      -0.95rem 0 0 var(--side-dark),
+      -1rem 0 0 var(--side-dark),
+      calc(var(--coin-thickness) * -1) 0 0 var(--side-dark);
+      transform: translateX(calc(var(--coin-thickness) * 0.5));
     background-color: var(--lowlight);
-    animation-timing-function: linear;
+    background-image: var(--coin-back);
+  }
+  
+  /* Back to front face (100%) */
+  75% {
+    width: var(--coin-size);
+    box-shadow: 0 0 0 var(--lowlight);
+    background-color: var(--face);
+    background-image: var(--coin-back);
+  }
+
+
+ 100% {
+  width: 0.2rem; /* This controls how "thin" the coin looks when viewing the edge */
+    /* Multiple box shadows create the "ridged" edge effect */
+    box-shadow:
+      -0.05rem 0 0 var(--side),
+      -0.1rem 0 0 var(--side),
+      -0.15rem 0 0 var(--side),
+      -0.2rem 0 0 var(--side),
+      -0.25rem 0 0 var(--side),
+      -0.3rem 0 0 var(--side),
+      -0.35rem 0 0 var(--side),
+      -0.4rem 0 0 var(--side),
+      -0.45rem 0 0 var(--side),
+      -0.5rem 0 0 var(--side),
+      -0.55rem 0 0 var(--side),
+      -0.6rem 0 0 var(--side),
+      -0.65rem 0 0 var(--side),
+      -0.7rem 0 0 var(--side),
+      -0.75rem 0 0 var(--side),
+      -0.8rem 0 0 var(--side),
+      -0.85rem 0 0 var(--side),
+      -0.9rem 0 0 var(--side),
+      -0.95rem 0 0 var(--side),
+      -1rem 0 0 var(--side),
+      calc(var(--coin-thickness) * -1) 0 0 var(--side);
+      transform: translateX(calc(var(--coin-thickness) * 0.5));
+    background-color: var(--side-dark);
+    background-image: var(--coin-back);
+ }
+}
+
+/* pause animation on hover */
+.coin:hover::before {
+  animation-play-state: paused;
+}
+
+</style>
+
+
+<!-- Almost working version, but the animation is not smooth. Looks like it is flopping back and forth. -->
+<!-- @keyframes spin {
+  /* Front face of coin (0%) */
+  0% {
+    width: 0.2rem; /* This controls how "thin" the coin looks when viewing the edge */
+    /* Multiple box shadows create the "ridged" edge effect */
+    box-shadow:
+      0.05rem 0 var(--side),
+      0.1rem 0 var(--side),
+      0.15rem 0 var(--side),
+      0.2rem 0 var(--side),
+      0.25rem 0 var(--side),
+      0.3rem 0 var(--side),
+      0.35rem 0 var(--side),
+      0.4rem 0 var(--side),
+      0.45rem 0 0 var(--side),
+      0.5rem 0 0 var(--side),
+      0.55rem 0 0 var(--side),
+      0.6rem 0 0 var(--side),
+      0.65rem 0 0 var(--side),
+      0.7rem 0 0 var(--side),
+      0.75rem 0 0 var(--side),
+      0.8rem 0 0 var(--side),
+      0.85rem 0 0 var(--side),
+      0.9rem 0 0 var(--side),
+      0.95rem 0 0 var(--side),
+      1rem 0 0 var(--side),
+      var(--coin-thickness) 0 0 var(--side);
+      transform: translateX(calc(var(--coin-thickness) * -0.5));
+      background-color: var(--lowlight);
+      background-image: var(--coin-face);
+  }
+  
+  49.999% {
+    width: var(--coin-size); /* Full width */
+    box-shadow: 0 0 0 var(--lowlight); /* No side shadow */
+    background-color: var(--face);
+    background-image: var(--coin-face);
   }
   
   50.001% {
@@ -459,26 +612,22 @@ $effect(() => {
       -0.65rem 0 0 var(--side),
       -0.7rem 0 0 var(--side),
       -0.75rem 0 0 var(--side),
+      -0.8rem 0 0 var(--side),
+      -0.85rem 0 0 var(--side),
+      -0.9rem 0 0 var(--side),
+      -0.95rem 0 0 var(--side),
+      -1rem 0 0 var(--side),
       calc(var(--coin-thickness) * -1) 0 0 var(--side);
-    transform: translateX(calc(var(--coin-thickness) * 0.5));
+      transform: translateX(calc(var(--coin-thickness) * 0.5));
     background-color: var(--lowlight);
-    animation-timing-function: ease-out;
+    background-image: var(--coin-back);
   }
   
   /* Back to front face (100%) */
   100% {
     width: var(--coin-size);
-    box-shadow:
-      0 0 0 var(--side-dark);
+    box-shadow: 0 0 0 var(--lowlight);
+    background-color: var(--face);
+    background-image: var(--coin-back);
   }
-}
-
-/* pause animation on hover */
-.coin:hover::before {
-  animation-play-state: paused;
-}
-
-</style>
-
-
-
+} -->
