@@ -218,7 +218,7 @@ $effect(() => {
 
     <div class="divider-accent w-3/4 mx-auto"></div>
 
-    <!-- Projects Section -->
+    <!-- Projects Timeline Section -->
     <div id="projects" class="p-10 bg-primary/25 bg-opacity-50">
         <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
             <li>
