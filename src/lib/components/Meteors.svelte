@@ -3,7 +3,7 @@
     import { onMount } from "svelte";
     import { myThemeColors } from '$lib/themeUtils';
 
-    export let number = 40;
+    export let number = 10;
     let meteorStyles: any = [];
     let changeMeteors = (num: number) => {
       meteorStyles = [];
