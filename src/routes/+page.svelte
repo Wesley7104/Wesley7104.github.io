@@ -350,7 +350,54 @@ onMount(() => {
                     <div class="text-lg font-black">Avery Marie Maternity</div>
                     <div class="text-base">Built a complete eCommerce solution with automated messaging and shipping using Ecwid eCommerce and GoDaddy Hosting.</div>
                 </div>
+                <hr />
             </li>
+            <li>
+              <hr />
+              <div class="timeline-middle">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+                  </svg>
+              </div>
+              <div class="timeline-end mb-10">
+                  <time class="font-mono italic">February 2021</time>
+                  <div class="text-lg font-black">Recipe Randomizer App</div>
+                  <div class="text-base">This was my first real application that I built using Svelte.js and SvelteKit. It was a recipe randomizer that would take a users book of recipes and build arandomized menu formy wife to cook for our family. It was a fun project and I learned a lot, but like a lot of side projects it was never finished... 🤔<br>
+                    <span class="italic">I still have the code somewhere, I just need to find it.</span>
+                  </div>
+
+              </div>
+              <hr />
+          </li>
+          <li>
+            <hr />
+            <div class="timeline-middle">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+                </svg>
+            </div>
+            <div class="timeline-start md:text-end mb-10">
+              <time class="font-mono italic">October 2021</time>
+              <div class="text-lg font-black">Beach For House Website</div>
+              <div class="text-base">Built a website for Thomas Beach for his run for South Carolina House or Representatives. Integrated his campaign and donations links and appliactions to allow online giving.</div>
+            </div>
+            <hr />
+          </li>
+          <li>
+            <hr />
+            <div class="timeline-middle">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+                </svg>
+            </div>
+            <div class="timeline-end mb-10">
+                <time class="font-mono italic">December 2021</time>
+                <div class="text-lg font-black">NASA Image of the Day Viewing App</div>
+                <div class="text-base">TBuilt a simple app using NASA's API to view the daily image of the day. This application was built using Svelte.js and SvelteKit, it was a real turning point in my web development journey.
+                </div>
+            </div>
+            <hr />
+        </li>
         </ul>
     </div>
 
