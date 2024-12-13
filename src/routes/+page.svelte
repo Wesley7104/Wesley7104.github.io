@@ -10,7 +10,9 @@
     import Meteors from '$lib/components/Meteors.svelte';
     import MagicCard from '$lib/components/MagicCard.svelte';
     import { myThemeColors } from '$lib/themeUtils';
+    import Lens from "$lib/components/Lens.svelte";
 
+    let hovering = $state(false);
     let words = ["Christian", "Father", "Husband", "Developer", "Integrator", "Designer", "Tech Consultant", "Day Trader"]; // Array of all words
     let currentWordIndex = 0;
     let currentCharIndex = 0;
@@ -205,27 +207,29 @@ onMount(() => {
 
       <div id="aboutMe" class="flex flex-col p-10 bg-secondary bg-opacity-10">
         
-          <div class="divider divider-primary w-3/4 mx-auto"></div>
-            <h2 class="text-5xl font-bold text-neutral-content text-center m-4">About Me</h2>
-          <p class="text-2xl text-neutral-content text-center">
+          <div class="divider divider-primary w-3/4 mx-auto {hovering ? 'blur-[2px]' : ''} transition-all duration-300 ease-linear"></div>
+            <h2 class="text-5xl font-bold text-neutral-content text-center m-4 {hovering ? 'blur-[2px]' : ''} transition-all duration-300 ease-linear">About Me</h2>
+          <p class="text-2xl text-neutral-content text-center {hovering ? 'blur-[2px]' : ''} transition-all duration-300 ease-linear">
             I am a Follower of Christ, a Husband to the love of my life, and a Father to two beautiful daughters.
           </p>
           <!-- <img src="{base}/images/family-with-weapons-2020-1836x788.png" alt="Wesley's Epic Family Pic" class="w-[80%] h-auto justify-center object-cover rounded-md m-4" /> -->
 
-        <div class="divider divider-accent w-3/4 mx-auto"></div>
+        <div class="divider divider-accent w-3/4 mx-auto {hovering ? 'blur-[2px]' : ''} transition-all duration-300 ease-linear"></div>
 
-        <img 
+        <Lens bind:hovering={hovering}>
+          <img 
             src="{base}/images/family-with-weapons-2020-1836x788.png" 
             alt="Wesley's Epic Family Pic" 
             class="w-[80%] h-[300px] object-cover object-[center_90%] justify-center items-center rounded-lg shadow-md m-4 mx-auto"
-        >
+          >
+        </Lens>
 
-        <p class="text-2xl text-neutral-content text-center lg:px-20">
+        <p class="text-2xl text-neutral-content text-center lg:px-20 {hovering ? 'blur-[2px]' : ''} transition-all duration-300 ease-linear">
           I am a mostly self taught developer who really enjoys researching new technologies and building new things. My wife and I are now both self employed in our own business <a href="https://kickinandscreenin.com" class="bg-neutral/70 text-accent px-2 rounded-md" target="_blank"> Kickin &amp; Screenin </a>, Misty has been since 2014. I on the other hand just recently took the leap and left my full-time career of over 10 years with and International scale company as a Field Service Rep/ Software Developer. We are both excited for the future as we have been constantly adding to new products to our own eCommerce store and exploring our creative side by launching new products in our newest endeavor <a href="https://hunnybabe.com" class="bg-neutral/70 text-accent px-2 rounded-md" target="_blank">Hunny &amp; Babe Company</a>.&nbsp;<br><br>I do have an Associates degree in Computer Information Systems from a two year college, and am only lacking one semester to complete my Bachelors degree. What I found is that I was spending so much time in school and on my full-time job that I couldn't work on projects and the things I wanted to learn...
         </p>
-        <div class="flex w-[95%] flex-col h-[100px] lg:flex-row m-4 mx-auto">
+        <div class="flex w-[95%] flex-col h-[100px] lg:flex-row m-4 mx-auto {hovering ? 'blur-[2px]' : ''} transition-all duration-300  ease-linear">
           <MagicCard
-            class="flex-col items-center justify-center from-primary via-neutral to-secondary bg-gradient-to-r m-4 rounded-md group transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+            class="flex-col items-center justify-center from-primary via-neutral to-secondary bg-gradient-to-r m-4 rounded-md group transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:text-10xl"
             gradientColor={$myThemeColors.accent || "#010101"}
             gradientSize={200}
           >
