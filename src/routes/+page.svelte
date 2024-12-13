@@ -192,18 +192,10 @@ onMount(() => {
         {/each}
     </div>
 
-    <!-- About Me Section -->
+<!-- About Me Section -->
      <!-- Meteors Animation -->
-    <div
-    class="relative flex 
-            h-fit w-full 
-            items-center 
-            justify-center 
-            overflow-hidden 
-            rounded-lg 
-            bg-background"
-    >
-      <Meteors number={30} />
+    <div class="relative flex h-fit w-full items-center justify-center overflow-hidden">
+      <Meteors number={50} />
 
       <div id="aboutMe" class="flex flex-col p-10 bg-secondary bg-opacity-10">
         
@@ -238,17 +230,11 @@ onMount(() => {
               </h3>
           </MagicCard>
         </div>
-        <!-- Meteors Animation -->
-    <div
-    class="relative flex 
-            h-fit w-full 
-            items-center 
-            justify-center 
-            overflow-hidden 
-            rounded-lg 
-            bg-background"
-    >
-      <Meteors number={30} />
+
+    <!-- Meteors Animation -->
+    <div class="relative flex h-fit w-full items-center justify-center overflow-hidden">
+      <Meteors number={10} />
+
         <p class="text-2xl text-neutral-content text-center lg:px-20 m-4">
           I have honestly never been happier! I am proud to say I have accomplished so much in such a short amount of time that I am now questioning why I didn't take the leap several years ago. Which, was the original plan when we purchased an inflatable rental company named <a href="https://www.justaddkidzrentals.com" class="bg-neutral/70 text-accent px-2 rounded-md" target="_blank">Just Add Kidz</a> from a friend who had been in the business for 15 years. In retrospect what I believe happened was the comfort and financial security of my full-time job at <a href="https://www.mt.com" class="bg-neutral/70 text-accent px-2 rounded-md" target="_blank">Mettler Toledo Inc</a>. made me question why I would leave in the first place. Even knowing this, it wasn't what I wanted to do with my life, I just felt unfulfilled knowing that I wanted to work for our businesses full-time.&nbsp;
         </p>
@@ -264,127 +250,108 @@ onMount(() => {
 
     <!-- Projects Timeline Section -->
     <div id="projects" class="p-10 bg-primary/25 bg-opacity-50">
+        <h2 class="text-4xl font-bold text-neutral-content text-center mb-8">My Development Journey</h2>
+        <p class="text-xl text-neutral-content text-center mb-10">
+            Building things while working a full-time job along with owning and operating two small businesses has caused my development progression to be very slow and methodical. The one thing this has allowed me to do is learn many different technologies and how to integrate pretty much anything.
+        </p>
         <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
             <li>
-              <div class="timeline-middle">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  class="h-5 w-5">
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                    clip-rule="evenodd" />
-                </svg>
-              </div>
-              <div class="timeline-start mb-10 md:text-end">
-                <time class="font-mono italic">1984</time>
-                <div class="text-lg font-black">First Macintosh computer</div>
-                The Apple Macintosh—later rebranded as the Macintosh 128K—is the original Apple Macintosh
-                personal computer. It played a pivotal role in establishing desktop publishing as a general
-                office function. The motherboard, a 9 in (23 cm) CRT monitor, and a floppy drive were housed
-                in a beige case with integrated carrying handle; it came with a keyboard and single-button
-                mouse.
-              </div>
-              <hr />
+                <div class="timeline-middle">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div class="timeline-start md:text-end mb-10">
+                    <time class="font-mono italic">April 2012</time>
+                    <div class="text-lg font-black">First Website</div>
+                    <div class="text-base">The first site I ever built while still in school. A humble beginning!</div>
+                </div>
+                <hr />
             </li>
             <li>
-              <hr />
-              <div class="timeline-middle">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  class="h-5 w-5">
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                    clip-rule="evenodd" />
-                </svg>
-              </div>
-              <div class="timeline-end mb-10">
-                <time class="font-mono italic">1998</time>
-                <div class="text-lg font-black">iMac</div>
-                iMac is a family of all-in-one Mac desktop computers designed and built by Apple Inc. It has
-                been the primary part of Apple's consumer desktop offerings since its debut in August 1998,
-                and has evolved through seven distinct forms
-              </div>
-              <hr />
+                <hr />
+                <div class="timeline-middle">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div class="timeline-end mb-10">
+                    <time class="font-mono italic">August 2013</time>
+                    <div class="text-lg font-black">Industrial Weighing Software</div>
+                    <div class="text-base">At Mettler Toledo, developed custom weighing software using C# and .NET frameworks. Learned software deployment and integration across various technologies.</div>
+                </div>
+                <hr />
             </li>
             <li>
-              <hr />
-              <div class="timeline-middle">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  class="h-5 w-5">
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                    clip-rule="evenodd" />
-                </svg>
-              </div>
-              <div class="timeline-start mb-10 md:text-end">
-                <time class="font-mono italic">2001</time>
-                <div class="text-lg font-black">iPod</div>
-                The iPod is a discontinued series of portable media players and multi-purpose mobile devices
-                designed and marketed by Apple Inc. The first version was released on October 23, 2001, about
-                8+1⁄2 months after the Macintosh version of iTunes was released. Apple sold an estimated 450
-                million iPod products as of 2022. Apple discontinued the iPod product line on May 10, 2022. At
-                over 20 years, the iPod brand is the oldest to be discontinued by Apple
-              </div>
-              <hr />
+                <hr />
+                <div class="timeline-middle">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div class="timeline-start md:text-end mb-10">
+                    <time class="font-mono italic">September 2016</time>
+                    <div class="text-lg font-black">DMCEC Website</div>
+                    <div class="text-base">Built the Decatur Morgan County Entrepreneurial Center website with integrated calendar, email, and custom graphics using HTML, CSS, and JavaScript.</div>
+                </div>
+                <hr />
             </li>
             <li>
-              <hr />
-              <div class="timeline-middle">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  class="h-5 w-5">
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                    clip-rule="evenodd" />
-                </svg>
-              </div>
-              <div class="timeline-end mb-10">
-                <time class="font-mono italic">2007</time>
-                <div class="text-lg font-black">iPhone</div>
-                iPhone is a line of smartphones produced by Apple Inc. that use Apple's own iOS mobile
-                operating system. The first-generation iPhone was announced by then-Apple CEO Steve Jobs on
-                January 9, 2007. Since then, Apple has annually released new iPhone models and iOS updates. As
-                of November 1, 2018, more than 2.2 billion iPhones had been sold. As of 2022, the iPhone
-                accounts for 15.6% of global smartphone market share
-              </div>
-              <hr />
+                <hr />
+                <div class="timeline-middle">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div class="timeline-end mb-10">
+                    <time class="font-mono italic">May 2017</time>
+                    <div class="text-lg font-black">Kickin & Screenin Website</div>
+                    <div class="text-base">Created our first business website using HTML, CSS, and PHP.</div>
+                </div>
+                <hr />
             </li>
             <li>
-              <hr />
-              <div class="timeline-middle">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  class="h-5 w-5">
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
-                    clip-rule="evenodd" />
-                </svg>
-              </div>
-              <div class="timeline-start mb-10 md:text-end">
-                <time class="font-mono italic">2015</time>
-                <div class="text-lg font-black">Apple Watch</div>
-                The Apple Watch is a line of smartwatches produced by Apple Inc. It incorporates fitness
-                tracking, health-oriented capabilities, and wireless telecommunication, and integrates with
-                iOS and other Apple products and services
-              </div>
+                <hr />
+                <div class="timeline-middle">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div class="timeline-start md:text-end mb-10">
+                    <time class="font-mono italic">March 2020</time>
+                    <div class="text-lg font-black">K&S Internal Quote Tool</div>
+                    <div class="text-base">Developed an internal project for Kickin & Screenin using Svelte.js and Vercel Hosting.</div>
+                </div>
+                <hr />
             </li>
-          </ul>
+            <li>
+                <hr />
+                <div class="timeline-middle">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div class="timeline-end mb-10">
+                    <time class="font-mono italic">September 2020</time>
+                    <div class="text-lg font-black">Hunny & Babe Company</div>
+                    <div class="text-base">Launched an eCommerce store for home decor and custom wooden signs using Ecwid eCommerce and Vercel Hosting.</div>
+                </div>
+                <hr />
+            </li>
+            <li>
+                <hr />
+                <div class="timeline-middle">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div class="timeline-start md:text-end mb-10">
+                    <time class="font-mono italic">November 2020</time>
+                    <div class="text-lg font-black">Avery Marie Maternity</div>
+                    <div class="text-base">Built a complete eCommerce solution with automated messaging and shipping using Ecwid eCommerce and GoDaddy Hosting.</div>
+                </div>
+            </li>
+        </ul>
     </div>
 
 </main>
