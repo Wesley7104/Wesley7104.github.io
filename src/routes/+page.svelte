@@ -97,6 +97,15 @@ let coinSpeed = $state('5s');
 let coinThickness = $state('1rem');
 
 //Timeline color values
+$effect(() => {
+    colorAccent = $myThemeColors.accent;
+    colorNeutralContent = $myThemeColors.neutralContent;
+    colorNeutral = $myThemeColors.neutral;
+    colorPrimary = $myThemeColors.primary;
+    colorSecondary = $myThemeColors.secondary;
+});
+
+
 let colorAccent = $state($myThemeColors.accent);
 let colorNeutralContent = $state($myThemeColors.neutralContent);
 let colorNeutral = $state($myThemeColors.neutral);
@@ -125,6 +134,7 @@ let observer: IntersectionObserver;
 
 onMount(() => {
     startTyping();
+    myThemeColors.set($myThemeColors);
 });
     
   let activeItems = $state(Array(timelineItems.length).fill(false));
