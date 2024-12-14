@@ -10,12 +10,12 @@ interface ThemeColors {
     primary: string;
     secondary: string;
     accent: string;
-    neutral: string | null;
-    neutralContent: string | null;
-    success: string | null;
-    warning: string | null;
-    error: string	| null;
-    info: string	| null;
+    neutral: string;
+    neutralContent: string;
+    success: string;
+    warning: string;
+    error: string;
+    info: string;
   // Add other theme properties as needed
 }
 
@@ -58,12 +58,12 @@ export function setThemeColors(theme: string) {
                     primary: themeColorValues.primary || '',
                     secondary: themeColorValues.secondary || '',
                     accent: themeColorValues.accent || '',
-                    neutral: themeColorValues.neutral || null,
-                    neutralContent: themeColorValues.neutralContent || null,
-                    success: themeColorValues.success || null,
-                    warning: themeColorValues.warning || null,
-                    error: themeColorValues.error || null,
-                    info: themeColorValues.info || null
+                    neutral: themeColorValues.neutral || '',
+                    neutralContent: themeColorValues.neutralContent || '',
+                    success: themeColorValues.success || '',
+                    warning: themeColorValues.warning || '',
+                    error: themeColorValues.error || '',
+                    info: themeColorValues.info || ''
                 };
         
                 myThemeColors.set(updatedThemeColors);
@@ -72,3 +72,6 @@ export function setThemeColors(theme: string) {
         console.error("Invalid theme colors");
     }
 }
+
+
+

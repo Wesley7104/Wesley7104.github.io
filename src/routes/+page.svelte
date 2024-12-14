@@ -13,7 +13,7 @@
     import { myThemeColors } from '$lib/themeUtils';
     import Lens from "$lib/components/Lens.svelte";
     import { inview } from 'svelte-inview';
-
+    
     let hovering = $state(false);
     let words = ["Christian", "Father", "Husband", "Developer", "Integrator", "Designer", "Tech Consultant", "Day Trader"]; // Array of all words
     let currentWordIndex = 0;
@@ -105,12 +105,13 @@ $effect(() => {
     colorSecondary = $myThemeColors.secondary;
 });
 
+let themeColors = $myThemeColors;
 
-let colorAccent = $state($myThemeColors.accent);
-let colorNeutralContent = $state($myThemeColors.neutralContent);
-let colorNeutral = $state($myThemeColors.neutral);
-let colorPrimary = $state($myThemeColors.primary);
-let colorSecondary = $state($myThemeColors.secondary);
+let colorAccent: string = $state(themeColors.accent);
+let colorNeutralContent: string = $state(themeColors.neutralContent);
+let colorNeutral: string = $state(themeColors.neutral);
+let colorPrimary: string = $state(themeColors.primary);
+let colorSecondary: string = $state(themeColors.secondary);
 
 // You can update these values dynamically as needed
 $effect(() => {
@@ -130,15 +131,13 @@ $effect(() => {
     document.documentElement.style.setProperty('--color-secondary', colorSecondary);
 });
 
-let observer: IntersectionObserver;
-
 onMount(() => {
     startTyping();
     myThemeColors.set($myThemeColors);
 });
     
   let activeItems = $state(Array(timelineItems.length).fill(false));
-  $inspect(activeItems);
+  //$inspect(activeItems);
 </script>
 
 <main class="bg-neutral">
@@ -249,7 +248,7 @@ onMount(() => {
         <div class="flex w-[95%] flex-col h-[100px] lg:flex-row m-4 mx-auto {hovering ? 'blur-[2px]' : ''} transition-all duration-300  ease-linear">
           <MagicCard
             class="flex-col items-center justify-center from-primary via-neutral to-secondary bg-gradient-to-r m-4 rounded-md group transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:text-10xl"
-            gradientColor={$myThemeColors.accent || "#010101"}
+            gradientColor={colorAccent || "#010101"}
             gradientSize={200}
           >
               <h3 class="text-5xl text-center font-bold text-neutral-content m-4">
@@ -286,11 +285,9 @@ onMount(() => {
             <li 
               use:inview={{ threshold: 0.5, rootMargin: "-100px" }}
               oninview_enter={() => {
-                console.log('Item entering:', i);
                 activeItems[i] = true;
               }}
               oninview_leave={() => {
-                console.log('Item leaving:', i);
                 activeItems[i] = false;
               }}
               class="timeline-item {activeItems[i] ? 'active' : ''}"
