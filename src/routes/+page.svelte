@@ -3,6 +3,7 @@
     import { fade } from 'svelte/transition';
     import { base } from '$app/paths';
     import services from '$lib/services.json';
+    import timelineItems from '$lib/components/timeline.json';
     import WebDevIcon from '$lib/components/WebDevIcon.svelte';
     import DesignIcon from '$lib/components/DesignIcon.svelte';
     import IntegrationIcon from '$lib/components/IntegrationIcon.svelte';
@@ -11,6 +12,7 @@
     import MagicCard from '$lib/components/MagicCard.svelte';
     import { myThemeColors } from '$lib/themeUtils';
     import Lens from "$lib/components/Lens.svelte";
+    import { inview } from 'svelte-inview';
 
     let hovering = $state(false);
     let words = ["Christian", "Father", "Husband", "Developer", "Integrator", "Designer", "Tech Consultant", "Day Trader"]; // Array of all words
@@ -94,6 +96,13 @@ let coinSize = $state('250px');
 let coinSpeed = $state('5s');
 let coinThickness = $state('1rem');
 
+//Timeline color values
+let colorAccent = $state($myThemeColors.accent);
+let colorNeutralContent = $state($myThemeColors.neutralContent);
+let colorNeutral = $state($myThemeColors.neutral);
+let colorPrimary = $state($myThemeColors.primary);
+let colorSecondary = $state($myThemeColors.secondary);
+
 // You can update these values dynamically as needed
 $effect(() => {
     document.documentElement.style.setProperty('--coin-face', coinFace);
@@ -105,13 +114,21 @@ $effect(() => {
     document.documentElement.style.setProperty('--coin-size', coinSize);
     document.documentElement.style.setProperty('--coin-speed', coinSpeed);
     document.documentElement.style.setProperty('--coin-thickness', coinThickness);
+    document.documentElement.style.setProperty('--color-accent', colorAccent);
+    document.documentElement.style.setProperty('--color-neutral-content', colorNeutralContent);
+    document.documentElement.style.setProperty('--color-neutral', colorNeutral);
+    document.documentElement.style.setProperty('--color-primary', colorPrimary);
+    document.documentElement.style.setProperty('--color-secondary', colorSecondary);
 });
 
+let observer: IntersectionObserver;
 
 onMount(() => {
     startTyping();
 });
     
+  let activeItems = $state(Array(timelineItems.length).fill(false));
+  $inspect(activeItems);
 </script>
 
 <main class="bg-neutral">
@@ -255,191 +272,41 @@ onMount(() => {
             Building things while working a full-time job along with owning and operating two small businesses has caused my development progression to be very slow and methodical. The one thing this has allowed me to do is learn many different technologies and how to integrate pretty much anything.
         </p>
         <ul class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical">
-            <li>
-                <div class="timeline-middle">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
-                    </svg>
-                </div>
-                <div class="timeline-start md:text-end mb-10">
-                    <time class="font-mono italic">April 2012</time>
-                    <div class="text-lg font-black">First Website</div>
-                    <div class="text-base">The first site I ever built while still in school. A humble beginning!</div>
-                </div>
-                <hr />
-            </li>
-            <li>
-                <hr />
-                <div class="timeline-middle">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
-                    </svg>
-                </div>
-                <div class="timeline-end mb-10">
-                    <time class="font-mono italic">August 2013</time>
-                    <div class="text-lg font-black">Industrial Weighing Software</div>
-                    <div class="text-base">At Mettler Toledo, developed custom weighing software using C# and .NET frameworks. Learned software deployment and integration across various technologies.</div>
-                </div>
-                <hr />
-            </li>
-            <li>
-                <hr />
-                <div class="timeline-middle">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
-                    </svg>
-                </div>
-                <div class="timeline-start md:text-end mb-10">
-                    <time class="font-mono italic">September 2016</time>
-                    <div class="text-lg font-black">DMCEC Website</div>
-                    <div class="text-base">Built the Decatur Morgan County Entrepreneurial Center website with integrated calendar, email, and custom graphics using HTML, CSS, and JavaScript.</div>
-                </div>
-                <hr />
-            </li>
-            <li>
-                <hr />
-                <div class="timeline-middle">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
-                    </svg>
-                </div>
-                <div class="timeline-end mb-10">
-                    <time class="font-mono italic">May 2017</time>
-                    <div class="text-lg font-black">Kickin & Screenin Website</div>
-                    <div class="text-base">Created our first business website using HTML, CSS, and PHP.</div>
-                </div>
-                <hr />
-            </li>
-            <li>
-                <hr />
-                <div class="timeline-middle">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
-                    </svg>
-                </div>
-                <div class="timeline-start md:text-end mb-10">
-                    <time class="font-mono italic">March 2020</time>
-                    <div class="text-lg font-black">K&S Internal Quote Tool</div>
-                    <div class="text-base">Developed an internal project for Kickin & Screenin using Svelte.js and Vercel Hosting.</div>
-                </div>
-                <hr />
-            </li>
-            <li>
-                <hr />
-                <div class="timeline-middle">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
-                    </svg>
-                </div>
-                <div class="timeline-end mb-10">
-                    <time class="font-mono italic">September 2020</time>
-                    <div class="text-lg font-black">Hunny & Babe Company</div>
-                    <div class="text-base">Launched an eCommerce store for home decor and custom wooden signs using Ecwid eCommerce and Vercel Hosting.</div>
-                </div>
-                <hr />
-            </li>
-            <li>
-                <hr />
-                <div class="timeline-middle">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
-                    </svg>
-                </div>
-                <div class="timeline-start md:text-end mb-10">
-                    <time class="font-mono italic">November 2020</time>
-                    <div class="text-lg font-black">Avery Marie Maternity</div>
-                    <div class="text-base">Built a complete eCommerce solution with automated messaging and shipping using Ecwid eCommerce and GoDaddy Hosting.</div>
-                </div>
-                <hr />
-            </li>
-            <li>
-              <hr />
+          {#each timelineItems as item, i}
+            <li 
+              use:inview={{ threshold: 0.5, rootMargin: "-100px" }}
+              oninview_enter={() => {
+                console.log('Item entering:', i);
+                activeItems[i] = true;
+              }}
+              oninview_leave={() => {
+                console.log('Item leaving:', i);
+                activeItems[i] = false;
+              }}
+              class="timeline-item {activeItems[i] ? 'active' : ''}"
+              > 
+            
               <div class="timeline-middle">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5 {activeItems[i] ? 'active' : ''}">
                       <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
                   </svg>
               </div>
-              <div class="timeline-end mb-10">
-                  <time class="font-mono italic">February 2021</time>
-                  <div class="text-lg font-black">Recipe Randomizer App</div>
-                  <div class="text-base">This was my first real application that I built using Svelte.js and SvelteKit. It was a recipe randomizer that would take a users book of recipes and build arandomized menu formy wife to cook for our family. It was a fun project and I learned a lot, but like a lot of side projects it was never finished... 🤔<br>
-                    <span class="italic">I still have the code somewhere, I just need to find it.</span>
-                  </div>
-
-              </div>
-              <hr />
-              </li>
-              <li>
-                <hr />
-                <div class="timeline-middle">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
-                    </svg>
-                </div>
+              {#if i % 2 === 0}
                 <div class="timeline-start md:text-end mb-10">
-                  <time class="font-mono italic">October 2021</time>
-                  <div class="text-lg font-black">Beach For House Website</div>
-                  <div class="text-base">Built a website for Thomas Beach for his run for South Carolina House or Representatives. Integrated his campaign and donations links and appliactions to allow online giving.</div>
+                    <time class="font-mono italic">{item.date}</time>
+                    <div class="text-lg font-black">{item.title}</div>
+                  <div class="text-base">{item.description}</div>
                 </div>
-                <hr />
-              </li>
-              <li>
-                <hr />
-                <div class="timeline-middle">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
-                    </svg>
+              {:else}
+                <div class="timeline-end md:text-start mb-10">
+                    <time class="font-mono italic">{item.date}</time>
+                    <div class="text-lg font-black">{item.title}</div>
+                  <div class="text-base">{item.description}</div>
                 </div>
-                <div class="timeline-end mb-10">
-                    <time class="font-mono italic">December 2021</time>
-                    <div class="text-lg font-black">NASA Image of the Day Viewing App</div>
-                    <div class="text-base">TBuilt a simple app using NASA's API to view the daily image of the day. This application was built using Svelte.js and SvelteKit, it was a real turning point in my web development journey.
-                    </div>
-                </div>
-                <hr />
-            </li>
-            <li>
-              <hr />
-              <div class="timeline-middle">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
-                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
-                  </svg>
-              </div>
-              <div class="timeline-start md:text-end mb-10">
-                <time class="font-mono italic">2022</time>
-                <div class="text-lg font-black">The Year I Discovered Blockchain and Web3</div>
-                <div class="text-base">I started learning about blockchain and web3 in 2022. I was fascinated by the potential of the technology and the ability to create decentralized applications. I started learning about Solidity and Ethereum and quickly realized that this was something I wanted to be a part of. I started learning about the different blockchains and the different use cases for each one. I spent a lot of time in the DeFi space, and discovered a whole new passion. Trading and Crypto!</div>
-              </div>
+              {/if}
               <hr />
             </li>
-            <li>
-              <hr />
-              <div class="timeline-middle">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
-                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
-                  </svg>
-              </div>
-              <div class="timeline-end mb-10">
-                  <time class="font-mono italic">October 2022</time>
-                  <div class="text-lg font-black">Trading Bots Consumed My Life</div>
-                  <div class="text-base">I started building trading bots in 2022. I was fascinated by the potential of the technology and the ability to create decentralized applications. Building out automated trading strategies using TradingView and PineScript, to automate the backtesting and eventually the trading. I slowly lost interest in Web3 and started solidifying my skills in trading.</div>
-              </div>
-              <hr />
-          </li>
-          <li>
-            <hr />
-            <div class="timeline-middle">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
-                </svg>
-            </div>
-            <div class="timeline-start md:text-end mb-10">
-              <time class="font-mono italic">February 2023</time>
-              <div class="text-lg font-black">Trading Became My Passion</div>
-              <div class="text-base">Pivoting from trading bots to manual trading changed my outlook on the markets. I started to notice patterns and this led me to start trading on my own. I became a member of the WolfPack Trade Group, this iswhere i learned to trade using data and statistics. Changing my trading strategy to a more data-driven approach was a game changer for me. I started to see the markets in a whole new way and I was able to make much better decisions along with implementing risk managment strategies to protect capital as well.</div>
-            </div>
-            <hr />
-          </li>
+          {/each}
         </ul>
     </div>
 
@@ -455,6 +322,12 @@ onMount(() => {
   --coin-size: 1rem;
   --coin-face: none;
   --coin-back: none;
+
+  --color-accent: #977b4a;
+  --color-neutral-content: #111;
+  --color-neutral: #dbaf36;
+  --color-primary: #977b4a;
+  --color-secondary: #dbaf36;
 }
 /*
   everything above is positioning and variables.
@@ -648,6 +521,36 @@ onMount(() => {
 /* pause animation on hover */
 .coin:hover::before {
   animation-play-state: paused;
+}
+
+/* Timeline animation Style */
+.timeline-middle svg {
+  color: var(--color-neutral-content);
+  transition: all 0.6s ease;
+}
+
+.timeline-middle svg.active {
+  color: var(--color-secondary);
+}
+
+.timeline hr {
+  transition: background-size 0.6s ease;
+  background: linear-gradient(to right, var(--color-accent) 50%, var(--color-neutral-content) 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+}
+
+.timeline li {
+  opacity: 0.2;
+  transition: opacity 0.6s ease;
+}
+
+.timeline li.active {
+  opacity: 1;
+}
+
+.timeline li.active hr {
+  background-position: left bottom;
 }
 
 </style>
