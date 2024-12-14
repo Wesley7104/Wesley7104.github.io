@@ -46,6 +46,7 @@
 		"lottie-web": "^5.12.2",
 		"lucide-svelte": "^0.462.0",
 		"svelte-icons": "^2.1.0",
+		"svelte-inview": "^4.0.4",
 		"tailwind-merge": "^2.5.5"
 	}
 }
