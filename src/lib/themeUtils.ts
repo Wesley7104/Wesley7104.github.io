@@ -11,7 +11,7 @@ interface ThemeColors {
     secondary: string;
     accent: string;
     neutral: string | null;
-    neutral_content: string | null;
+    neutralContent: string | null;
     success: string | null;
     warning: string | null;
     error: string	| null;
@@ -26,7 +26,7 @@ export const myThemeColors = writable<ThemeColors>({
     secondary: '', 
     accent: '', 
     neutral: '', 
-    neutral_content: '',
+    neutralContent: '',
     success: '', 
     warning: '', 
     error: '', 
@@ -59,7 +59,7 @@ export function setThemeColors(theme: string) {
                     secondary: themeColorValues.secondary || '',
                     accent: themeColorValues.accent || '',
                     neutral: themeColorValues.neutral || null,
-                    neutral_content: themeColorValues.neutral_content || null,
+                    neutralContent: themeColorValues.neutralContent || null,
                     success: themeColorValues.success || null,
                     warning: themeColorValues.warning || null,
                     error: themeColorValues.error || null,
