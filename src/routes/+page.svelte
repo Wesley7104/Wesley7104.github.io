@@ -165,11 +165,11 @@ onMount(() => {
               </div> -->
           </div>
           <div>
-              <h1 class="m-2 text-4xl font-bold text-neutral-content">My name is Wesley Randolph</h1>
-              <p class="m-2 py-4 text-3xl font-bold text-neutral-content">
+              <h1 class="m-2 text-2xl md:text-4xl font-bold text-neutral-content">My name is Wesley Randolph</h1>
+              <p class="m-2 py-4 text-xl md:text-3xl font-bold text-neutral-content">
                   I am a
-                  <span class="text-3xl font-black from-neutral to-neutral-content bg-gradient-to-r">
-                      <span class="text-5xl font-bold from-accent via-neutral to-primary bg-gradient-to-r bg-clip-text text-transparent">
+                  <span class="font-black from-neutral to-neutral-content bg-gradient-to-r">
+                      <span class="text-2xl md:text-4xl font-bold from-accent via-neutral to-primary bg-gradient-to-r bg-clip-text text-transparent">
                         {typedChars}
                       </span>
                   </span>
