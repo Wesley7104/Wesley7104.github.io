@@ -91,8 +91,8 @@
     });
  */
 // Add these state variables
-let coinFace = $state(`url(${base}/images/MyCartoonPhoto.png)`);
-let coinBack = $state(`url(${base}/images/RDTcoinBack.png)`);
+let coinFace = $state(`url(${base}/images/MyCartoonPhoto.jpg)`);
+let coinBack = $state(`url(${base}/images/RDTcoinBack.jpg)`);
 let coinColor = $state('#896c3b'); //#be9d66 Gold
 let coinSideColor = $state('#dbaf36'); //#896c3b Darker Gold
 let coinSideDarkColor = $state('#977823'); //#120e08 Darkest Gold
@@ -455,7 +455,7 @@ function initScrollAnimations() {
 
         <Lens bind:hovering={hovering}>
           <img 
-            src="{base}/images/family-with-weapons-2020-1836x788.png" 
+            src="{base}/images/family-with-weapons-2020-1836x788.jpg" 
             alt="Wesley's Epic Family Pic" 
             class="w-[100%] h-auto md:w-[80%] md:h-[400px] object-contain md:object-cover object-[center_90%] rounded-lg shadow-md m-1 md:m-4 mx-auto"
           >
@@ -523,10 +523,10 @@ function initScrollAnimations() {
                     <div class="text-lg font-black">{item.title}</div>
                   <div class="text-base">{item.description}</div>
                   {#if item.link && item.link !== ''}
-                    <a href="{item.link}" class="text-blue-500" target="_blank">View Project - {item.link}</a>
+                    <a href="{item.link}" class="text-blue-500 m-2" target="_blank">View Project - {item.link}</a>
                   {/if}
                   {#if item.image && item.image !== ''}
-                    <img src="{item.image}" alt="{item.title}" class="w-full h-auto" />
+                    <img src="{item.image}" alt="{item.title}" class="w-full h-auto rounded-lg shadow-lg mt-2" />
                   {/if}
                 </div>
               {:else}
