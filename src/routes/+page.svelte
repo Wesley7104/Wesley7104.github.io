@@ -13,6 +13,11 @@
     import { myThemeColors } from '$lib/themeUtils';
     import Lens from "$lib/components/Lens.svelte";
     import { inview } from 'svelte-inview';
+    import { gsap } from 'gsap';
+    import { ScrollTrigger } from 'gsap/ScrollTrigger';
+    
+    // Register ScrollTrigger plugin
+    gsap.registerPlugin(ScrollTrigger);
     
     let hovering = $state(false);
     let words = ["Christian", "Father", "Husband", "Developer", "Integrator", "Designer", "Tech Consultant", "Day Trader"]; // Array of all words
@@ -131,10 +136,224 @@ $effect(() => {
     document.documentElement.style.setProperty('--color-secondary', colorSecondary);
 });
 
+let scrollTriggers: any[] = [];
+
 onMount(() => {
     startTyping();
     myThemeColors.set($myThemeColors);
+    
+    // Animate hero on page load (not scroll)
+    animateHeroOnLoad();
+    
+    // Initialize GSAP scroll animations
+    initScrollAnimations();
+    
+    return () => {
+        // Cleanup ScrollTrigger instances
+        scrollTriggers.forEach(st => st.kill());
+        scrollTriggers = [];
+        ScrollTrigger.getAll().forEach(st => st.kill());
+    };
 });
+
+function animateHeroOnLoad() {
+    const heroContent = document.querySelector('.hero-content');
+    const coinContainer = document.querySelector('.coin-container');
+    
+    if (heroContent) {
+        const children = Array.from(heroContent.children);
+        gsap.fromTo(children,
+            { opacity: 0, y: 30 },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                stagger: 0.15,
+                ease: 'power2.out',
+                delay: 0.3
+            }
+        );
+    }
+    
+    if (coinContainer) {
+        gsap.fromTo(coinContainer,
+            { opacity: 0, scale: 0.8, rotation: -15 },
+            {
+                opacity: 1,
+                scale: 1,
+                rotation: 0,
+                duration: 1.2,
+                ease: 'back.out(1.7)',
+                delay: 0.2
+            }
+        );
+    }
+}
+
+function initScrollAnimations() {
+    // Services section cards - fade in/out on scroll
+    const servicesSection = document.querySelector('.flex.w-full.p-4.flex-col');
+    if (servicesSection) {
+        const serviceCards = servicesSection.querySelectorAll('.card');
+        serviceCards.forEach((card, index) => {
+            const st = gsap.fromTo(card,
+                { opacity: 0, y: 60, scale: 0.9 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    duration: 0.8,
+                    delay: index * 0.2,
+                    ease: 'power2.inOut',
+                    scrollTrigger: {
+                        trigger: card,
+                        start: 'top 85%',
+                        end: 'bottom 15%',
+                        toggleActions: 'play pause restart pause',
+                        markers: false // Set to true for debugging
+                    }
+                }
+            );
+            if (st.scrollTrigger) scrollTriggers.push(st.scrollTrigger);
+        });
+    }
+    
+    // About Me section
+    const aboutMeSection = document.querySelector('#aboutMe');
+    if (aboutMeSection) {
+        const aboutMeChildren = Array.from(aboutMeSection.children);
+        aboutMeChildren.forEach((element, index) => {
+            const st = gsap.fromTo(element,
+                { opacity: 0, y: 40 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.9,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: element,
+                        start: 'top 85%',
+                        end: 'bottom 15%',
+                        toggleActions: 'play none none reverse',
+                        markers: false
+                    }
+                }
+            );
+            if (st.scrollTrigger) scrollTriggers.push(st.scrollTrigger);
+        });
+    }
+    
+    // Meteors containers
+    const meteorContainers = document.querySelectorAll('.relative.flex.h-fit.w-full');
+    meteorContainers.forEach((container) => {
+        const st = gsap.fromTo(container,
+            { opacity: 0 },
+            {
+                opacity: 1,
+                duration: 1,
+                ease: 'power1.out',
+                scrollTrigger: {
+                    trigger: container,
+                    start: 'top 90%',
+                    end: 'bottom 10%',
+                    toggleActions: 'play none none reverse',
+                    markers: false
+                }
+            }
+        );
+        if (st.scrollTrigger) scrollTriggers.push(st.scrollTrigger);
+    });
+    
+    // Projects Timeline section
+    const projectsSection = document.querySelector('#projects');
+    if (projectsSection) {
+        const sectionTitle = projectsSection.querySelector('h2');
+        const sectionDesc = projectsSection.querySelector('p');
+        const timelineItems = projectsSection.querySelectorAll('.timeline-item');
+        
+        if (sectionTitle) {
+            const st = gsap.fromTo(sectionTitle,
+                { opacity: 0, y: 30 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: sectionTitle,
+                        start: 'top 85%',
+                        end: 'bottom 15%',
+                        toggleActions: 'play none none reverse',
+                        markers: false
+                    }
+                }
+            );
+            if (st.scrollTrigger) scrollTriggers.push(st.scrollTrigger);
+        }
+        
+        if (sectionDesc) {
+            const st = gsap.fromTo(sectionDesc,
+                { opacity: 0, y: 30 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.8,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: sectionDesc,
+                        start: 'top 85%',
+                        end: 'bottom 15%',
+                        toggleActions: 'play none none reverse',
+                        markers: false
+                    }
+                }
+            );
+            if (st.scrollTrigger) scrollTriggers.push(st.scrollTrigger);
+        }
+        
+        timelineItems.forEach((item, index) => {
+            const st = gsap.fromTo(item,
+                { opacity: 0, x: index % 2 === 0 ? -40 : 40 },
+                {
+                    opacity: 1,
+                    x: 0,
+                    duration: 0.8,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: item,
+                        start: 'top 85%',
+                        end: 'bottom 15%',
+                        toggleActions: 'play none none reverse',
+                        markers: false
+                    }
+                }
+            );
+            if (st.scrollTrigger) scrollTriggers.push(st.scrollTrigger);
+        });
+    }
+    
+    // Divider elements
+    const dividers = document.querySelectorAll('.divider');
+    dividers.forEach((divider) => {
+        const st = gsap.fromTo(divider,
+            { opacity: 0, scaleX: 0 },
+            {
+                opacity: 1,
+                scaleX: 1,
+                duration: 0.6,
+                ease: 'power2.out',
+                scrollTrigger: {
+                    trigger: divider,
+                    start: 'top 85%',
+                    end: 'bottom 15%',
+                    toggleActions: 'play none none reverse',
+                    markers: false
+                }
+            }
+        );
+        if (st.scrollTrigger) scrollTriggers.push(st.scrollTrigger);
+    });
+}
     
   let activeItems = $state(Array(timelineItems.length).fill(false));
   //$inspect(activeItems);
@@ -294,7 +513,7 @@ onMount(() => {
               > 
             
               <div class="timeline-middle">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5 {activeItems[i] ? 'active' : ''}">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
                       <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
                   </svg>
               </div>
@@ -303,6 +522,12 @@ onMount(() => {
                     <time class="font-mono italic">{item.date}</time>
                     <div class="text-lg font-black">{item.title}</div>
                   <div class="text-base">{item.description}</div>
+                  {#if item.link && item.link !== ''}
+                    <a href="{item.link}" class="text-blue-500" target="_blank">View Project</a>
+                  {/if}
+                  {#if item.image && item.image !== ''}
+                    <img src="{item.image}" alt="{item.title}" class="w-full h-auto" />
+                  {/if}
                 </div>
               {:else}
                 <div class="timeline-end md:text-start mb-10">
@@ -536,7 +761,7 @@ onMount(() => {
   transition: all 0.6s ease;
 }
 
-.timeline-middle svg.active {
+.timeline li.active .timeline-middle svg {
   color: var(--color-secondary);
 }
 
