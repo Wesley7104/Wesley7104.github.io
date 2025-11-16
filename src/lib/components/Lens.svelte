@@ -23,7 +23,7 @@
   
 <!-- svelte-ignore a11y_no_static_element_interactions -->
 <div
-    class="relative overflow-hidden rounded-2xl z-20 cursor-none"
+    class="relative overflow-hidden rounded-2xl z-20 cursor-none flex items-center justify-center"
     onmouseenter={() => (hovering = true)}
     onmouseleave={() => (hovering = false)}
     onmousemove={handleMouseMove}

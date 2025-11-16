@@ -442,7 +442,7 @@ function initScrollAnimations() {
     <div class="relative flex h-fit w-full items-center justify-center overflow-hidden">
       <Meteors number={50} />
 
-      <div id="aboutMe" class="flex flex-col p-10 bg-secondary bg-opacity-10">
+      <div id="aboutMe" class="flex flex-col p-10 md:p-2 bg-secondary bg-opacity-10">
         
           <div class="divider divider-primary w-3/4 mx-auto {hovering ? 'blur-[2px]' : ''} transition-all duration-300 ease-linear"></div>
             <h2 class="text-5xl font-bold text-neutral-content text-center m-4 {hovering ? 'blur-[2px]' : ''} transition-all duration-300 ease-linear">About Me</h2>
@@ -457,7 +457,7 @@ function initScrollAnimations() {
           <img 
             src="{base}/images/family-with-weapons-2020-1836x788.png" 
             alt="Wesley's Epic Family Pic" 
-            class="w-[80%] h-[300px] object-cover object-[center_90%] justify-center items-center rounded-lg shadow-md m-4 mx-auto"
+            class="w-[100%] h-auto md:w-[80%] md:h-[400px] object-contain md:object-cover object-[center_90%] rounded-lg shadow-md m-1 md:m-4 mx-auto"
           >
         </Lens>
 
@@ -523,7 +523,7 @@ function initScrollAnimations() {
                     <div class="text-lg font-black">{item.title}</div>
                   <div class="text-base">{item.description}</div>
                   {#if item.link && item.link !== ''}
-                    <a href="{item.link}" class="text-blue-500" target="_blank">View Project</a>
+                    <a href="{item.link}" class="text-blue-500" target="_blank">View Project - {item.link}</a>
                   {/if}
                   {#if item.image && item.image !== ''}
                     <img src="{item.image}" alt="{item.title}" class="w-full h-auto" />
