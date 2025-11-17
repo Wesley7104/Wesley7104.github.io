@@ -67,7 +67,7 @@
         "title": "NASA Image of the Day Viewing App",
         "description": "Built a simple app using NASA's API to view the daily image of the day. This application was built using Svelte.js and SvelteKit, it was a real turning point in my web development journey.",
         "link": "https://nasa-images-app-sveltekit-api.vercel.app/",
-        "image": "/images/nasa-apod-imagesAppViewer.jpg"
+        "image": "/images/NASA-APOD-imagesAppViewer.jpg"
     },
     {
         "date": "2022",
