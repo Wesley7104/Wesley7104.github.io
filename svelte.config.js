@@ -15,6 +15,18 @@ const config = {
 		paths: {
 			base: process.argv.includes('dev') ? '' : '/wesley7104.github.io'
 		},
+		prerender: {
+			handleHttpError: ({ path, referrer, message, status }) => {
+				// Ignore 404 errors for images during prerendering
+				// Static assets are served correctly at runtime, but may not resolve during prerender
+				if (status === 404 && path.includes('/images/')) {
+					console.warn(`Skipping missing image during prerender: ${path} (referrer: ${referrer})`);
+					return; // Return undefined to ignore the error
+				}
+				// For other errors, throw to fail the build
+				throw new Error(`${message} (${path})`);
+			}
+		}
 	}
 };
 

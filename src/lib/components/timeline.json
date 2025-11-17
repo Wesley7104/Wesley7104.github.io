@@ -60,14 +60,14 @@
         "title": "Beach For House Website",
         "description": "Built a website for Thomas Beach for his run for South Carolina House or Representatives. Integrated his campaign and donations links and appliactions to allow online giving.",
         "link": "",
-        "image": "/images/BeachForHouseDotCom_Nov2021.jpg"
+        "image": "/images/beachForHouseDotCom-Nov2021.jpg"
     },
     {
         "date": "December 2021",
         "title": "NASA Image of the Day Viewing App",
         "description": "Built a simple app using NASA's API to view the daily image of the day. This application was built using Svelte.js and SvelteKit, it was a real turning point in my web development journey.",
         "link": "https://nasa-images-app-sveltekit-api.vercel.app/",
-        "image": "/images/NASA_APOD_imagesAppViewer.jpg"
+        "image": "/images/nasa-apod-imagesAppViewer.jpg"
     },
     {
         "date": "2022",
