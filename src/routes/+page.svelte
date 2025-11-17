@@ -353,6 +353,31 @@ function initScrollAnimations() {
         );
         if (st.scrollTrigger) scrollTriggers.push(st.scrollTrigger);
     });
+    
+    // Contact section
+    const contactSection = document.querySelector('#contact');
+    if (contactSection) {
+        const contactChildren = Array.from(contactSection.children);
+        contactChildren.forEach((element, index) => {
+            const st = gsap.fromTo(element,
+                { opacity: 0, y: 40 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.9,
+                    ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: element,
+                        start: 'top 85%',
+                        end: 'bottom 15%',
+                        toggleActions: 'play none none reverse',
+                        markers: false
+                    }
+                }
+            );
+            if (st.scrollTrigger) scrollTriggers.push(st.scrollTrigger);
+        });
+    }
 }
     
   let activeItems = $state(Array(timelineItems.length).fill(false));
@@ -396,8 +421,8 @@ function initScrollAnimations() {
               <p class="m-2 pb-4 text-xl font-bold text-neutral-content">
                 A man of many talents and yet a Master of none! 🤣
               </p>
-              <button class="m-2 btn btn-accent shadow-md">See my work.</button>
-              <button class="m-2 btn btn-primary shadow-md">Setup a Meeting!</button>
+              <button class="m-2 btn btn-accent shadow-md" onclick={() => { window.location.href = '/#projects'; }}>See my work.</button>
+              <button class="m-2 btn btn-primary shadow-md" onclick={() => { window.location.href = '/#contact'; }}>Setup a Meeting!</button>
           </div>
           </div>
       </div>
@@ -546,6 +571,36 @@ function initScrollAnimations() {
             </li>
           {/each}
         </ul>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="divider divider-accent opacity-50 w-3/4 mx-auto"></div>
+    
+    <div id="contact" class="p-10 bg-secondary bg-opacity-10">
+        <h2 class="text-4xl font-bold text-neutral-content text-center mb-8">Get In Touch</h2>
+        <p class="text-xl text-neutral-content text-center mb-10">
+            I'd love to hear from you! Feel free to reach out via phone or email, let's talk about your next project or idea.
+        </p>
+        
+        <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
+            <div class="flex flex-col items-center gap-4">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-accent">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                </svg>
+                <a href="tel:+12568726439" class="text-2xl font-semibold text-neutral-content hover:text-accent transition-colors">
+                    (256)872-6439
+                </a>
+            </div>
+            
+            <div class="flex flex-col items-center gap-4">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-accent">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                </svg>
+                <a href="mailto:wesley@randev.tech" class="text-2xl font-semibold text-neutral-content hover:text-accent transition-colors">
+                    wesley@randev.tech
+                </a>
+            </div>
+        </div>
     </div>
 
 </main>
