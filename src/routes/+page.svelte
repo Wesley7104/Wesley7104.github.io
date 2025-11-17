@@ -381,6 +381,14 @@ function initScrollAnimations() {
 }
     
   let activeItems = $state(Array(timelineItems.length).fill(false));
+
+  // Helper function to prepend base path to image URLs
+  function getImagePath(imagePath: string): string {
+    if (!imagePath || imagePath === '') return '';
+    if (imagePath.startsWith('http://') || imagePath.startsWith('https://')) return imagePath;
+    if (imagePath.startsWith('/')) return `${base}${imagePath}`;
+    return imagePath;
+  }
   //$inspect(activeItems);
 </script>
 
@@ -551,7 +559,7 @@ function initScrollAnimations() {
                     <a href="{item.link}" class="text-blue-500 m-2" target="_blank">View Project - {item.link}</a>
                   {/if}
                   {#if item.image && item.image !== ''}
-                    <img src="{item.image}" alt="{item.title}" class="w-full h-auto rounded-lg shadow-lg mt-2" />
+                    <img src="{getImagePath(item.image)}" alt="{item.title}" class="w-full h-auto rounded-lg shadow-lg mt-2" />
                   {/if}
                 </div>
               {:else}
@@ -563,7 +571,7 @@ function initScrollAnimations() {
                     <a href="{item.link}" class="text-blue-500 m-2" target="_blank">View Project - {item.link}</a>
                   {/if}
                   {#if item.image && item.image !== ''}
-                    <img src="{item.image}" alt="{item.title}" class="w-full h-auto rounded-lg shadow-lg mt-2" />
+                    <img src="{getImagePath(item.image)}" alt="{item.title}" class="w-full h-auto rounded-lg shadow-lg mt-2" />
                   {/if}
                 </div>
               {/if}
