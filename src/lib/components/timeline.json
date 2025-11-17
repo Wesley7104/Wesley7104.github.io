@@ -24,7 +24,7 @@
         "date": "February 2017",
         "title": "Original Website for Kickin & Screenin",
         "description": "Built the original website for Kickin & Screenin using HTML, CSS, and JavaScript.",
-        "link": "",
+        "link": "https://kickinandscreenin.com",
         "image": ""
     },
     {
@@ -86,21 +86,70 @@
     {
         "date": "February 2023",
         "title": "Trading Became My Passion",
-        "description": "Pivoting from trading bots to manual trading changed my outlook on the markets. I started to notice patterns and this led me to start trading on my own. I became a member of the WolfPack Trade Group, this iswhere i learned to trade using data and statistics. Changing my trading strategy to a more data-driven approach was a game changer for me. I started to see the markets in a whole new way and I was able to make much better decisions along with implementing risk managment strategies to protect capital as well.",
+        "description": "Pivoting from trading bots to manual trading changed my outlook on the markets. I started to notice patterns and this led me to start trading on my own. I became a member of the Pack Trade Group, this is where I learned to trade using data and statistics. Changing my trading strategy to a more data-driven approach was a game changer for me. I started to see the markets in a whole new way and I was able to make much better decisions along with implementing risk managment strategies to protect capital as well.",
         "link": "",
         "image": ""
     },
     {
         "date": "August 2023",
-        "title": "Kickin & Screenin Website Redesign",
+        "title": "Kickin & Screenin Website Redesign and eCommerce Platform Migration",
         "description": "Redesigned the website for Kickin & Screenin using Svelte.js and SvelteKit, and Ecwid for the eCommerce platform.",
-        "link": "https://kickinscreenin.com",
+        "link": "https://kickinandscreenin.com",
         "image": "/images/ks-site-2023-948x456.jpg"
     },
     {
         "date": "March 2024",
         "title": "Building Trading Tools",
         "description": "I have recently started building trading tools to help me become a better trader. The goal is to market these tools once they are complete, if they can help me then they can help other traders as well.",
+        "link": "",
+        "image": ""
+    },
+    {
+        "date": "June 2024",
+        "title": "Kickin & Screenin Website Redesign #2",
+        "description": "Redesigned the website for Kickin & Screenin again using the same technology stack as the first redesign. Just a few changes to the design and a few changes to the functionality.",
+        "link": "https://kickinandscreenin.com",
+        "image": "/images/kands_websiteRedesignV2.jpg"
+    },
+    {
+        "date": "September 2024",
+        "title": "Trade Arsenal Webapp",
+        "description": "Built a webapp to help me manage my trading. It is a simple webapp that allowed me to perform in depth backtesting, track my trades, and see my performance. It was built using Svelte.js and SvelteKit, and Turso for the database.",
+        "link": "",
+        "image": ""
+    },
+    {
+        "date": "March 2025",
+        "title": "Alabama Reloader Website with Hosted Merch Store Integration",
+        "description": "Built a website for Alabama Reloader to help market their products. It has a user backend for the owner to update images, colors, change the text, and add blog posts and links all from inside his own custom login page. It also has a hosted merch store integration with Ecwid, with Kickin & Screenin as his fullfilment service.",
+        "link": "https://www.alabamareloader.com/",
+        "image": "/images/alabamaRelaoderWebsiteV1.jpg"
+    },
+    {
+        "date": "April 2025",
+        "title": "Collab Ads Platform (Paused for now)",
+        "description": "Built a platform to help me manage and setup collaborative physical media mailer ads. It is a simple platform that allows me to create, manage, and track my collab ads. It was built using Svelte.js and SvelteKit, and SQlite for the database. I paused this project for now as I was not getting the results/response I was hoping for.",
+        "link": "",
+        "image": ""
+    },
+    {
+        "date": "July 2025",
+        "title": "NCA Tree Software - Demo App",
+        "description": "Built a demo app for the National Cemetery Administration to try and secure a contract to help them manage their tree inventory. Can't give away the details on this one as I am still hoping to secure the contract.",
+        "link": "",
+        "image": ""
+    },
+    {
+        "date": "September 2025",
+        "title": "Top Tier Auto Mobile Detailing Website",
+        "description": "Built a website for Top Tier Auto Mobile Detailing service company to help with their professional online presence. We knocked this one out of the park with design and functionality.",
+        "link": "https://www.thetoptierauto.com/",
+        "image": "/images/theTopTierAutoWebsiteV1.jpg"
+    },
+    {
+        "date": "October 2025",
+        "title": "SAM Contract WebScraper InternalTool",
+        "description": "Built a simple internal tool to help me scrape the SAM contract website to help me find contracts that I can bid on. It scrapes the website, filters the data, saves the data to a database, and then sends me notification emails when new contracts are found.",
         "link": "",
         "image": ""
     }
