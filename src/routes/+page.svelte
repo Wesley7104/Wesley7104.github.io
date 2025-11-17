@@ -421,8 +421,8 @@ function initScrollAnimations() {
               <p class="m-2 pb-4 text-xl font-bold text-neutral-content">
                 A man of many talents and yet a Master of none! 🤣
               </p>
-              <button class="m-2 btn btn-lg btn-accent shadow-md" onclick={() => { window.location.href = '/#projects'; }}>See my work.</button>
-              <button class="m-2 btn btn-lg btn-primary shadow-md" onclick={() => { window.location.href = '/#contact'; }}>Setup a Meeting!</button>
+              <button class="m-2 btn btn-lg btn-accent shadow-md" onclick={() => { window.location.href = `${base}/#projects`; }}>See my work.</button>
+              <button class="m-2 btn btn-lg btn-primary shadow-md" onclick={() => { window.location.href = `${base}/#contact`; }}>Setup a Meeting!</button>
           </div>
           </div>
       </div>

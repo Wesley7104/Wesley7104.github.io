@@ -64,9 +64,9 @@
           </svg>
         </div>
         <ul class="menu menu-sm dropdown-content bg-primary rounded-box z-[1] mt-3 w-auto p-2 shadow">
-          <li><a href="/#aboutMe">About</a></li>
-          <li><a href="/#projects">Projects</a></li>
-          <li><a href="/#contact">Contact</a></li>
+          <li><a href="{base}/#aboutMe">About</a></li>
+          <li><a href="{base}/#projects">Projects</a></li>
+          <li><a href="{base}/#contact">Contact</a></li>
           {#if $isMobile}
           <div class="navbar-end">
               <ThemeSelect />
@@ -78,9 +78,9 @@
     </div>
     <div class="navbar-center hidden md:flex">
       <ul class="menu menu-horizontal px-1 text-xl">
-        <li><a href="/#aboutMe">About</a></li>
-        <li><a href="/#projects">Projects</a></li>
-        <li><a href="/#contact">Contact</a></li>
+        <li><a href="{base}/#aboutMe">About</a></li>
+        <li><a href="{base}/#projects">Projects</a></li>
+        <li><a href="{base}/#contact">Contact</a></li>
       </ul>
     </div>
       {#if !$isMobile}

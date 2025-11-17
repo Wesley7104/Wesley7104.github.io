@@ -1,6 +1,5 @@
 <script lang='ts'>
     import { onMount, onDestroy } from 'svelte';
-    import anime from 'animejs';
     import { draw, fade } from 'svelte/transition';
     import { bounceIn, bounceInOut, bounceOut, elasticIn, elasticInOut, sineIn } from 'svelte/easing';
 	import { tweened } from 'svelte/motion';
@@ -16,7 +15,7 @@
     //let currentThemeColors = getThemeColors(undefined);
     //let primaryColor = currentThemeColors;
     let unsubscribe: any;
-    export let myThemeColors = writable();
+    export const myThemeColors = writable();
     //const myThemeColorsState = getThemeColors();
     
     if (typeof window !== 'undefined') {
