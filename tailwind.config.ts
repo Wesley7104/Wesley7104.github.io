@@ -8,6 +8,9 @@ export default {
 
 	theme: {
 		extend: {
+			fontFamily: {
+				sans: [ 'monospace'],
+			  },
 		  animation: {
 			meteor: "meteor 5s linear infinite",
 		  },

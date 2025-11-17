@@ -534,6 +534,12 @@ function initScrollAnimations() {
                     <time class="font-mono italic">{item.date}</time>
                     <div class="text-lg font-black">{item.title}</div>
                   <div class="text-base">{item.description}</div>
+                  {#if item.link && item.link !== ''}
+                    <a href="{item.link}" class="text-blue-500 m-2" target="_blank">View Project - {item.link}</a>
+                  {/if}
+                  {#if item.image && item.image !== ''}
+                    <img src="{item.image}" alt="{item.title}" class="w-full h-auto rounded-lg shadow-lg mt-2" />
+                  {/if}
                 </div>
               {/if}
               <hr />

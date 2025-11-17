@@ -11,21 +11,35 @@
         "title": "Industrial Weighing Software",
         "description": "At Mettler Toledo, developed custom weighing software using C# and .NET frameworks. Learned software deployment and integration across various technologies.",
         "link": "",
-        "image": ""
+        "image": "/images/industrialSoftware-mockupImage.jpg"
     },
     {
         "date": "September 2016",
         "title": "DMCEC Website",
         "description": "Built the Decatur Morgan County Entrepreneurial Center website with integrated calendar, email, and custom graphics using HTML, CSS, and JavaScript.",
         "link": "",
+        "image": "/images/dmcec-website-2017-948x507.jpg"
+    },
+    {
+        "date": "February 2017",
+        "title": "Original Website for Kickin & Screenin",
+        "description": "Built the original website for Kickin & Screenin using HTML, CSS, and JavaScript.",
+        "link": "",
         "image": ""
     },
     {
-        "date": "November 2016",
+        "date": "August 2020",
+        "title": "Kickin & Screenin Internal Quote Tool",
+        "description": "Built a simple internal quote tool for Kickin & Screenin to help with the quoting process. It was a simple tool that allowed us to quote jobs quickly and easily.",
+        "link": "",
+        "image": "/images/t-shirtquotetool-948x462.jpg"
+    },
+    {
+        "date": "November 2020",
         "title": "Avery Marie Maternity",
         "description": "Built a complete eCommerce solution with automated messaging and shipping using Ecwid eCommerce and GoDaddy Hosting.",
         "link": "",
-        "image": ""
+        "image": "/images/averymariematernity-site-nov2020-948x438.jpg"
     },
     {
         "date": "February 2021",
@@ -35,32 +49,39 @@
         "image": ""
     },
     {
+        "date": "April 2021",
+        "title": "Hunny & Babe Company Website",
+        "description": "Built a website for the Hunny & Babe Company to help market their products. It was a simple eCommerce website built using Svelte.js and SvelteKit, and BigCommerce for the eCommerce platform.",
+        "link": "https://hunnybabe.com",
+        "image": "/images/hunnybabeecom-948x437.jpg"
+    },
+    {
         "date": "October 2021",
         "title": "Beach For House Website",
         "description": "Built a website for Thomas Beach for his run for South Carolina House or Representatives. Integrated his campaign and donations links and appliactions to allow online giving.",
         "link": "",
-        "image": ""
+        "image": "/images/BeachForHouseDotCom_Nov2021.jpg"
     },
     {
         "date": "December 2021",
         "title": "NASA Image of the Day Viewing App",
         "description": "Built a simple app using NASA's API to view the daily image of the day. This application was built using Svelte.js and SvelteKit, it was a real turning point in my web development journey.",
-        "link": "",
-        "image": ""
+        "link": "https://nasa-images-app-sveltekit-api.vercel.app/",
+        "image": "/images/NASA_APOD_imagesAppViewer.jpg"
     },
     {
         "date": "2022",
         "title": "The Year I Discovered Blockchain and Web3",
         "description": "I started learning about blockchain and web3 in 2022. I was fascinated by the potential of the technology and the ability to create decentralized applications. I started learning about Solidity and Ethereum and quickly realized that this was something I wanted to be a part of. I started learning about the different blockchains and the different use cases for each one. I spent a lot of time in the DeFi space, and discovered a whole new passion. Trading and Crypto!",
         "link": "",
-        "image": ""
+        "image": "/images/blockchainAndWeb3image.jpg"
     },
     {
         "date": "October 2022",
         "title": "Trading Bots Consumed My Life",
         "description": "I started building trading bots in 2022. I was fascinated by the potential of the technology and the ability to create decentralized applications. Building out automated trading strategies using TradingView and PineScript, to automate the backtesting and eventually the trading. I slowly lost interest in Web3 and started solidifying my skills in trading.",
         "link": "",
-        "image": ""
+        "image": "/images/tradingBotImage.jpg"
     },
     {
         "date": "February 2023",
@@ -68,6 +89,13 @@
         "description": "Pivoting from trading bots to manual trading changed my outlook on the markets. I started to notice patterns and this led me to start trading on my own. I became a member of the WolfPack Trade Group, this iswhere i learned to trade using data and statistics. Changing my trading strategy to a more data-driven approach was a game changer for me. I started to see the markets in a whole new way and I was able to make much better decisions along with implementing risk managment strategies to protect capital as well.",
         "link": "",
         "image": ""
+    },
+    {
+        "date": "August 2023",
+        "title": "Kickin & Screenin Website Redesign",
+        "description": "Redesigned the website for Kickin & Screenin using Svelte.js and SvelteKit, and Ecwid for the eCommerce platform.",
+        "link": "https://kickinscreenin.com",
+        "image": "/images/ks-site-2023-948x456.jpg"
     },
     {
         "date": "March 2024",
