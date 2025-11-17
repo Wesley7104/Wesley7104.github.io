@@ -386,7 +386,7 @@ function initScrollAnimations() {
 
 <main class="bg-neutral">
     <!-- Hero Section -->
-      <div class="hero min-h-auto p-10 from-neutral via-neutral to-accent bg-gradient-to-tl">
+      <div class="hero min-h-auto md:min-h-[70vh] p-10 from-neutral via-neutral to-accent bg-gradient-to-tl">
           <div class="hero-content flex-col lg:flex-row">
           <div class="relative coin-container">
               <div class="coin">
@@ -421,8 +421,8 @@ function initScrollAnimations() {
               <p class="m-2 pb-4 text-xl font-bold text-neutral-content">
                 A man of many talents and yet a Master of none! 🤣
               </p>
-              <button class="m-2 btn btn-accent shadow-md" onclick={() => { window.location.href = '/#projects'; }}>See my work.</button>
-              <button class="m-2 btn btn-primary shadow-md" onclick={() => { window.location.href = '/#contact'; }}>Setup a Meeting!</button>
+              <button class="m-2 btn btn-lg btn-accent shadow-md" onclick={() => { window.location.href = '/#projects'; }}>See my work.</button>
+              <button class="m-2 btn btn-lg btn-primary shadow-md" onclick={() => { window.location.href = '/#contact'; }}>Setup a Meeting!</button>
           </div>
           </div>
       </div>
