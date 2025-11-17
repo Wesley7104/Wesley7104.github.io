@@ -25,7 +25,7 @@
         "title": "Original Website for Kickin & Screenin",
         "description": "Built the original website for Kickin & Screenin using HTML, CSS, and JavaScript.",
         "link": "https://kickinandscreenin.com",
-        "image": ""
+        "image": "/images/ks-site-2017-948x456.jpg"
     },
     {
         "date": "August 2020",
@@ -95,7 +95,7 @@
         "title": "Kickin & Screenin Website Redesign and eCommerce Platform Migration",
         "description": "Redesigned the website for Kickin & Screenin using Svelte.js and SvelteKit, and Ecwid for the eCommerce platform.",
         "link": "https://kickinandscreenin.com",
-        "image": "/images/ks-site-2023-948x456.jpg"
+        "image": ""
     },
     {
         "date": "March 2024",
