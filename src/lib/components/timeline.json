@@ -130,7 +130,7 @@
         "title": "Collab Ads Platform (Paused for now)",
         "description": "Built a platform to help me manage and setup collaborative physical media mailer ads. It is a simple platform that allows me to create, manage, and track my collab ads. It was built using Svelte.js and SvelteKit, and SQlite for the database. I paused this project for now as I was not getting the results/response I was hoping for.",
         "link": "",
-        "image": ""
+        "image": "/images/collabAdsLandingPageV1.jpg"
     },
     {
         "date": "July 2025",
